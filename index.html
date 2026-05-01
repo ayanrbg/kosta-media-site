@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kosta Media — Official TikTok Agency · CCA</title>
+<meta name="description" content="Kosta Media — официальное агентство TikTok. Помогаем стримерам зарабатывать больше подарков, расти быстрее и не оставаться один на один с проблемами. 0% комиссии.">
+<meta property="og:title" content="Kosta Media — Official TikTok Agency">
+<meta property="og:description" content="Помогаем стримерам зарабатывать больше подарков, расти быстрее. 0% комиссии.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kosta.media">
+<link rel="icon" type="image/png" href="assets/logo-glyph.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════ NAV ═══════ -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="nav-logo">
+      <div class="k-glyph"></div>
+      <span class="nav-logo-text">Kosta Media</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#perks" data-i18n="nav_perks">Преимущества</a>
+      <a href="#how" data-i18n="nav_how">Как это работает</a>
+      <a href="#prizes" data-i18n="nav_prizes">Призы</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    </div>
+
+    <div class="nav-actions">
+      <div class="lang-dropdown" id="lang-dropdown">
+        <button class="lang-current" id="lang-current" aria-haspopup="true" aria-expanded="false">
+          <span class="lang-current-code" id="lang-current-code">RU</span>
+          <span class="lang-arrow">▾</span>
+        </button>
+        <div class="lang-popup" id="lang-popup"></div>
+      </div>
+      <a href="#" data-wa-link target="_blank" rel="noreferrer" class="btn btn-cyan nav-cta-desktop" data-i18n="nav_contact">Связаться</a>
+      <button class="menu-btn" id="menu-btn" aria-label="menu">≡</button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#perks" data-i18n="nav_perks">Преимущества</a>
+    <a href="#how" data-i18n="nav_how">Как это работает</a>
+    <a href="#prizes" data-i18n="nav_prizes">Призы</a>
+    <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    <div class="mobile-menu-btns">
+      <a href="#" data-wa-link target="_blank" rel="noreferrer" class="btn btn-cyan">WhatsApp</a>
+      <a href="#" data-tg-link target="_blank" rel="noreferrer" class="btn btn-ghost">Telegram</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════ HERO ═══════ -->
+<div id="top"></div>
+<section id="hero">
+  <div class="glow" style="width:600px;height:600px;background:var(--cyan);opacity:0.18;top:-200px;left:-150px"></div>
+  <div class="glow" style="width:500px;height:500px;background:var(--pink);opacity:0.15;top:100px;right:-150px"></div>
+  <div class="glow" style="width:400px;height:400px;background:var(--orange);opacity:0.12;bottom:-100px;left:30%"></div>
+
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <div class="reveal hero-badge">
+        <span class="hero-badge-dot"></span>
+        <span class="t-mono hero-badge-text" data-i18n="badge_official">Официальное агентство в TikTok</span>
+      </div>
+
+      <h1 class="t-display hero-title reveal" id="hero-title" style="transition-delay:100ms">
+        <span>Стримь в TikTok,</span><br><span class="gradient-text">расти с теми,<br>кто рядом</span>
+      </h1>
+
+      <p class="t-body-lg hero-sub reveal" data-i18n="hero_sub" style="transition-delay:200ms">
+        Kosta Media помогает стримерам зарабатывать больше подарков, расти быстрее и не оставаться один на один с проблемами.
+      </p>
+
+      <div class="hero-ctas reveal" style="transition-delay:300ms">
+        <a href="#" data-wa-link target="_blank" rel="noreferrer" class="btn btn-cyan btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span data-i18n="hero_cta_primary">Написать в WhatsApp</span>
+        </a>
+        <a href="#" data-tg-link target="_blank" rel="noreferrer" class="btn btn-ghost btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> <span data-i18n="hero_cta_secondary">Telegram</span>
+        </a>
+      </div>
+
+      <div class="hero-meta reveal" id="hero-free" style="transition-delay:400ms">
+        <span class="accent">0%</span> <span>·</span> <span>бесплатно для стримера</span> <span>·</span> <span class="note">Не представители — официальный партнёр</span>
+      </div>
+    </div>
+
+    <!-- Phone mockup -->
+    <div class="hero-right">
+      <div class="phone-mockup">
+        <div class="phone-glow"></div>
+        <div class="phone-frame">
+          <div class="phone-screen">
+            <div class="phone-notch"></div>
+            <div class="phone-live-badge">
+              <span class="phone-live-dot"></span>
+              LIVE
+            </div>
+            <div class="phone-viewers">👁 12.4K</div>
+            <div class="phone-radial"></div>
+
+            <div class="phone-gift" style="top:240px;left:30px;animation-delay:0s;filter:drop-shadow(0 0 8px var(--pink))">🌹</div>
+            <div class="phone-gift" style="top:200px;right:50px;animation-delay:0.5s;filter:drop-shadow(0 0 8px var(--cyan))">💎</div>
+            <div class="phone-gift" style="top:280px;left:80px;animation-delay:1s;filter:drop-shadow(0 0 8px var(--orange))">🦁</div>
+            <div class="phone-gift" style="top:180px;right:20px;animation-delay:1.5s;filter:drop-shadow(0 0 8px var(--yellow))">⭐</div>
+
+            <div class="phone-comments">
+              <div class="phone-comment" style="color:rgba(255,255,255,0.9)">🔥 nice stream!</div>
+              <div class="phone-comment" style="color:var(--pink)">sent rose ×5 🌹</div>
+              <div class="phone-comment" style="color:var(--cyan)">💎 gift!</div>
+            </div>
+
+            <div class="phone-counter">
+              <div class="phone-counter-label" id="phone-counter-label">БОЛЬШЕ ПОДАРКОВ В LIVE</div>
+              <div class="phone-counter-value">💎 +1,240</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ MARQUEE ═══════ -->
+<div class="ticker-wrap">
+  <div class="ticker" id="ticker"></div>
+</div>
+
+<!-- ═══════ PERKS ═══════ -->
+<section id="perks">
+  <div class="glow" style="width:500px;height:500px;background:var(--cyan);opacity:0.08;top:100px;left:-100px"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="t-eyebrow reveal" style="margin-bottom:14px">// 01 / <span data-i18n="nav_perks">Преимущества</span></div>
+    <h2 class="t-h1 reveal" style="margin:0 0 16px;max-width:20ch;transition-delay:100ms" data-i18n="perks_title">Что вы получаете</h2>
+    <p class="t-body-lg reveal" style="margin:0 0 48px;max-width:540px;transition-delay:200ms" data-i18n="perks_sub">Реальная поддержка, а не пустые обещания</p>
+    <div class="perks-grid" id="perks-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════ HOW ═══════ -->
+<section id="how">
+  <div class="container">
+    <div class="t-eyebrow reveal" style="margin-bottom:14px">// 02 / <span data-i18n="nav_how">Как это работает</span></div>
+    <h2 class="t-h1 reveal" style="margin:0 0 60px;transition-delay:100ms" data-i18n="how_title">Как это работает</h2>
+    <div class="how-grid" id="how-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════ PRIZES ═══════ -->
+<section id="prizes">
+  <div class="glow" style="width:400px;height:400px;background:var(--orange);opacity:0.1;top:200px;right:-100px"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="t-eyebrow reveal" style="margin-bottom:14px">// 03 / <span data-i18n="nav_prizes">Призы</span></div>
+    <h2 class="t-h1 reveal" style="margin:0 0 16px;transition-delay:100ms" data-i18n="prizes_title">Призы за рост</h2>
+    <p class="t-body-lg reveal" style="margin:0 0 48px;max-width:600px;transition-delay:200ms" data-i18n="prizes_sub">Достигаете цели — получаете подарок. Без условий и подвохов.</p>
+    <div class="prizes-grid" id="prizes-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════ PROOF ═══════ -->
+<section id="proof" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="t-eyebrow reveal" style="margin-bottom:14px">// 04 / proof</div>
+    <h2 class="t-h1 reveal" style="margin:0 0 48px;transition-delay:100ms" data-i18n="proof_title">Стримеры о нас</h2>
+
+    <div class="stats-row reveal" style="transition-delay:200ms">
+      <div class="stat-block">
+        <div class="stat-value" style="color:var(--cyan);text-shadow:0 0 40px rgba(0,229,255,0.4)">
+          <span data-counter="500" data-suffix="+">0</span>
+        </div>
+        <div class="stat-label" data-stat-label="streamers">стримеров</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-value" style="color:var(--pink);text-shadow:0 0 40px rgba(255,46,126,0.4)">
+          <span data-counter="2" data-suffix=" yr">0</span>
+        </div>
+        <div class="stat-label" data-stat-label="years">года на рынке</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-value" style="color:var(--orange);text-shadow:0 0 40px rgba(255,138,61,0.4)">0%</div>
+        <div class="stat-label" data-stat-label="commission">0% комиссии</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-value" style="color:var(--yellow);text-shadow:0 0 40px rgba(255,209,102,0.4)">
+          <span data-counter="24" data-suffix="/7">0</span>
+        </div>
+        <div class="stat-label" data-stat-label="support">поддержка</div>
+      </div>
+    </div>
+
+    <div class="quotes-grid" id="quotes-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════ FAQ ═══════ -->
+<section id="faq">
+  <div class="container">
+    <div class="t-eyebrow reveal" style="margin-bottom:14px">// 05 / <span data-i18n="nav_faq">FAQ</span></div>
+    <h2 class="t-h1 reveal" style="margin:0 0 48px;transition-delay:100ms" data-i18n="faq_title">Частые вопросы</h2>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- ═══════ FINAL CTA ═══════ -->
+<section style="padding-bottom:120px;position:relative">
+  <div class="glow" style="width:600px;height:600px;background:var(--pink);opacity:0.15;top:0;left:50%;transform:translateX(-50%)"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div class="final-cta-card">
+      <div class="final-cta-radial"></div>
+      <h2 class="t-h1 reveal" style="margin:0 0 16px">
+        <span class="gradient-text" data-i18n="cta_title">Готовы начать?</span>
+      </h2>
+      <p class="t-body-lg reveal" style="margin:0 auto 32px;max-width:540px;transition-delay:100ms" data-i18n="cta_sub">
+        Оставьте свой TikTok и контакт — мы напишем в течение часа.
+      </p>
+      <div class="reveal" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;transition-delay:200ms">
+        <a href="#" data-wa-link target="_blank" rel="noreferrer" class="btn btn-cyan btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> <span data-i18n="hero_cta_primary">Написать в WhatsApp</span>
+        </a>
+        <a href="#" data-tg-link target="_blank" rel="noreferrer" class="btn btn-ghost btn-lg">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> <span data-i18n="hero_cta_secondary">Telegram</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-logo">
+      <div class="k-glyph"></div>
+      <span>Kosta Media</span>
+    </div>
+    <div class="footer-rights">
+      <span data-i18n="footer_rights">Официальное TikTok-агентство · CCA регион</span> · kosta.media
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════ STICKY CTA (mobile) ═══════ -->
+<div class="sticky-cta">
+  <a href="#" data-wa-link target="_blank" rel="noreferrer" class="btn btn-cyan"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+  <a href="#" data-tg-link target="_blank" rel="noreferrer" class="btn btn-ghost"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg> Telegram</a>
+</div>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
