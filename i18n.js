@@ -11,7 +11,7 @@ window.KM_I18N = {
     nav_contact: "Связаться",
     badge_official: "Официальное агентство в TikTok",
     badge_note: "Не представители — официальный партнёр по контракту",
-    hero_title: "Стримь в TikTok,|расти с теми,\nкто рядом",
+    hero_title: "Стримь в\nTikTok|расти с теми,\nкто рядом",
     hero_sub: "Kosta Media помогает стримерам зарабатывать больше подарков, расти быстрее и не оставаться один на один с проблемами.",
     hero_cta_primary: "Написать в WhatsApp",
     hero_cta_secondary: "Telegram",

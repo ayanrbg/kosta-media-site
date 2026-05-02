@@ -477,6 +477,13 @@ html[lang="ky"] .t-h3 {
   color: var(--cyan);
 }
 .hero-title { margin: 0 0 24px; max-width: 13ch; white-space: pre-line; }
+.tiktok-logo {
+  position: relative;
+  color: #fff;
+  text-shadow:
+    -2px -1px 0 #25F4EE,
+     2px  1px 0 #FE2C55;
+}
 .hero-sub { max-width: 580px; margin: 0 0 36px; }
 .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
 .hero-meta {

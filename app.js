@@ -65,7 +65,8 @@
     if (heroTitle) {
       var parts = t('hero_title').split('|');
       var br = function(s) { return s.replace(/\n/g, '<br>'); };
-      heroTitle.innerHTML = '<span>' + br(parts[0]) + '</span>' +
+      var logo = function(s) { return s.replace(/TikTok/g, '<span class="tiktok-logo">TikTok</span>'); };
+      heroTitle.innerHTML = '<span>' + logo(br(parts[0])) + '</span>' +
         (parts[1] ? '<br><span class="gradient-text">' + br(parts[1].trim()) + '</span>' : '');
     }
 
