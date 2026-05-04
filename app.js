@@ -5,8 +5,9 @@
   'use strict';
 
   // ─── Config ───
-  const WA_NUMBER = '+998000000000'; // Replace with real number
-  const TG_USERNAME = 'kosta_media'; // Replace with real username
+  const WA_LINK = 'https://wa.me/message/WUIBSOCSSUKEG1';
+  const TG_USERNAME = 'kosta_tiktok';
+  const TIKTOK_APPLY = 'https://www.tiktok.com/t/ZS9CXpxxc/';
 
   const PREFILL = {
     ru: 'Здравствуйте! Хочу вступить в агентство Kosta Media. Мой TikTok: @',
@@ -24,13 +25,11 @@
   }
 
   function getWaLink() {
-    var msg = encodeURIComponent(PREFILL[currentLang] || PREFILL.en);
-    return 'https://wa.me/' + WA_NUMBER.replace(/\D/g, '') + '?text=' + msg;
+    return WA_LINK;
   }
 
   function getTgLink() {
-    var msg = encodeURIComponent(PREFILL[currentLang] || PREFILL.en);
-    return 'https://t.me/' + TG_USERNAME + '?text=' + msg;
+    return 'https://t.me/' + TG_USERNAME;
   }
 
   function setLang(code) {
@@ -89,6 +88,7 @@
     // Links
     document.querySelectorAll('[data-wa-link]').forEach(function (a) { a.href = waLink; });
     document.querySelectorAll('[data-tg-link]').forEach(function (a) { a.href = tgLink; });
+    document.querySelectorAll('[data-apply-link]').forEach(function (a) { a.href = TIKTOK_APPLY; });
 
     // Perks
     var perks = [
