@@ -28,7 +28,7 @@
   }
 
   function getTgLink() {
-    return 'https://t.me/' + TG_USERNAME;
+    return 'tg://resolve?domain=' + TG_USERNAME;
   }
 
   function setLang(code) {
