@@ -7,7 +7,6 @@
   // ─── Config ───
   const WA_LINK = 'https://wa.me/message/WUIBSOCSSUKEG1';
   const TG_USERNAME = 'kosta_tiktok';
-  const TIKTOK_APPLY = 'https://kosta.media/go.html';
 
   const PREFILL = {
     ru: 'Здравствуйте! Хочу вступить в агентство Kosta Media. Мой TikTok: @',
@@ -88,7 +87,6 @@
     // Links
     document.querySelectorAll('[data-wa-link]').forEach(function (a) { a.href = waLink; });
     document.querySelectorAll('[data-tg-link]').forEach(function (a) { a.href = tgLink; });
-    document.querySelectorAll('[data-apply-link]').forEach(function (a) { a.href = TIKTOK_APPLY; });
 
     // Perks
     var perks = [
