@@ -7,7 +7,7 @@
   // ─── Config ───
   const WA_LINK = 'https://wa.me/message/WUIBSOCSSUKEG1';
   const TG_USERNAME = 'kosta_tiktok';
-  const TIKTOK_APPLY = 'https://www.tiktok.com/t/ZS9CXpxxc/';
+  const TIKTOK_APPLY = 'https://kosta.media/go.html';
 
   const PREFILL = {
     ru: 'Здравствуйте! Хочу вступить в агентство Kosta Media. Мой TikTok: @',
