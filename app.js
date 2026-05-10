@@ -91,14 +91,22 @@
       var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
       var isAndroid = /Android/.test(ua);
       
-      if (isAndroid && androidIntent) {
-        window.location.href = androidIntent;
-        setTimeout(function() { window.location.href = fallbackUrl; }, 1500);
-      } else if (isIOS && iosUrl) {
-        window.location.href = iosUrl;
-        setTimeout(function() { window.location.href = fallbackUrl; }, 1500);
+      // Check if we are inside an in-app browser (TikTok, Instagram, Facebook, etc)
+      var isInApp = /Instagram|FBAV|FBAN|TikTok|Bytedance|trill|Snapchat|Line|Viber|Telegram|wv/i.test(ua);
+      
+      if (isInApp) {
+        if (isAndroid && androidIntent) {
+          window.location.href = androidIntent;
+          setTimeout(function() { window.location.href = fallbackUrl; }, 1500);
+        } else if (isIOS && iosUrl) {
+          window.location.href = iosUrl;
+          setTimeout(function() { window.location.href = fallbackUrl; }, 1500);
+        } else {
+          window.location.href = fallbackUrl;
+        }
       } else {
-        window.open(fallbackUrl, '_blank');
+        // Standard mobile browsers handle standard https:// links natively without errors
+        window.location.href = fallbackUrl;
       }
     }
 
