@@ -84,9 +84,49 @@
     // Marquee
     renderMarquee();
 
+    // Deep link handler
+    function handleDeepLink(e, androidIntent, iosUrl, fallbackUrl) {
+      e.preventDefault();
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      var isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+      var isAndroid = /Android/.test(ua);
+      
+      if (isAndroid && androidIntent) {
+        window.location.href = androidIntent;
+        setTimeout(function() { window.location.href = fallbackUrl; }, 1500);
+      } else if (isIOS && iosUrl) {
+        window.location.href = iosUrl;
+        setTimeout(function() { window.location.href = fallbackUrl; }, 1500);
+      } else {
+        window.open(fallbackUrl, '_blank');
+      }
+    }
+
+    var tiktokUrl = "https://www.tiktok.com/tcn/scout_creators?use_spark=1&agency_scout_source=qr_code_leads&ShareLinkID=7636055606712926216";
+    var tiktokEncoded = encodeURIComponent(tiktokUrl);
+    var tiktokAndroid = "intent://webview?url=" + tiktokEncoded + "#Intent;package=com.zhiliaoapp.musically;scheme=snssdk1233;end;";
+    var tiktokIOS = "snssdk1233://webview?url=" + tiktokEncoded;
+
+    var tgFallback = "https://t.me/" + TG_USERNAME;
+    var tgAndroid = "intent://resolve?domain=" + TG_USERNAME + "#Intent;package=org.telegram.messenger;scheme=tg;end;";
+    var tgIOS = "tg://resolve?domain=" + TG_USERNAME;
+
     // Links
     document.querySelectorAll('[data-wa-link]').forEach(function (a) { a.href = waLink; });
-    document.querySelectorAll('[data-tg-link]').forEach(function (a) { a.href = tgLink; });
+    
+    document.querySelectorAll('[data-tg-link]').forEach(function (a) {
+      a.href = tgFallback; // fallback for hover/copy
+      a.addEventListener('click', function(e) {
+        handleDeepLink(e, tgAndroid, tgIOS, tgFallback);
+      });
+    });
+
+    document.querySelectorAll('[data-apply-link]').forEach(function (a) {
+      a.href = tiktokUrl; // fallback
+      a.addEventListener('click', function(e) {
+        handleDeepLink(e, tiktokAndroid, tiktokIOS, tiktokUrl);
+      });
+    });
 
     // Perks
     var perks = [
