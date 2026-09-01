@@ -74,6 +74,11 @@ window.KM_I18N = {
     form_or: "или напишите напрямую",
     footer_rights: "Официальное TikTok LIVE агентство · Казахстан, Узбекистан, Кыргызстан (регион CCA)",
     lang_label: "Язык",
+    seo_title: "Kosta Media — Official TikTok LIVE Agency · Казахстан, Узбекистан, Кыргызстан",
+    seo_description: "Kosta Media — официальное TikTok LIVE агентство для Казахстана, Узбекистана и Кыргызстана. 0% комиссии, личный менеджер, помощь при банах. 500+ стримеров.",
+    og_title: "Kosta Media — Official TikTok LIVE Agency · CCA",
+    og_description: "Официальное TikTok LIVE агентство для Казахстана, Узбекистана и Кыргызстана. 0% комиссии, личный менеджер, помощь при банах, призы за рост.",
+    org_description: "Официальное TikTok LIVE агентство-партнёр для стримеров Казахстана, Узбекистана, Кыргызстана и региона CCA. 0% комиссии со стримера, личный менеджер, помощь при банах и блокировках, стратегия эфиров, призы за рост.",
   },
   en: {
     nav_about: "About",
@@ -147,6 +152,11 @@ window.KM_I18N = {
     form_or: "or message us directly",
     footer_rights: "Official TikTok LIVE agency · Kazakhstan, Uzbekistan, Kyrgyzstan (CCA region)",
     lang_label: "Language",
+    seo_title: "Kosta Media — Official TikTok LIVE Agency · Kazakhstan, Uzbekistan, Kyrgyzstan",
+    seo_description: "Kosta Media is an official TikTok LIVE agency for Kazakhstan, Uzbekistan and Kyrgyzstan. 0% commission, personal manager, help with bans. 500+ streamers.",
+    og_title: "Kosta Media — Official TikTok LIVE Agency · CCA",
+    og_description: "Official TikTok LIVE agency for Kazakhstan, Uzbekistan and Kyrgyzstan. 0% commission, personal manager, help with bans, prizes for growth.",
+    org_description: "Official TikTok LIVE partner agency for streamers in Kazakhstan, Uzbekistan, Kyrgyzstan and the CCA region. 0% commission from the streamer, personal manager, help with bans and account issues, LIVE strategy, prizes for growth.",
   },
   uz: {
     nav_about: "Biz haqimizda",
@@ -220,6 +230,11 @@ window.KM_I18N = {
     form_or: "yoki to'g'ridan-to'g'ri yozing",
     footer_rights: "Rasmiy TikTok LIVE agentligi · Qozogʻiston, Oʻzbekiston, Qirgʻiziston (CCA mintaqasi)",
     lang_label: "Til",
+    seo_title: "Kosta Media — rasmiy TikTok LIVE agentligi · Qozogʻiston, Oʻzbekiston, Qirgʻiziston",
+    seo_description: "Kosta Media — Qozogʻiston, Oʻzbekiston va Qirgʻiziston uchun rasmiy TikTok LIVE agentligi. 0% komissiya, shaxsiy menejer, banlarda yordam. 500+ streamer.",
+    og_title: "Kosta Media — rasmiy TikTok LIVE agentligi · CCA",
+    og_description: "Qozogʻiston, Oʻzbekiston va Qirgʻiziston uchun rasmiy TikTok LIVE agentligi. 0% komissiya, shaxsiy menejer, banlarda yordam, oʻsish uchun sovgʻalar.",
+    org_description: "Qozogʻiston, Oʻzbekiston, Qirgʻiziston va CCA mintaqasi streamerlari uchun rasmiy TikTok LIVE hamkor agentligi. Streamerdan 0% komissiya, shaxsiy menejer, ban va bloklashlarda yordam, efir strategiyasi, oʻsish uchun sovgʻalar.",
   },
   kz: {
     nav_about: "Біз туралы",
@@ -293,6 +308,11 @@ window.KM_I18N = {
     form_or: "немесе тікелей жаз",
     footer_rights: "Ресми TikTok LIVE агенттігі · Қазақстан, Өзбекстан, Қырғызстан (CCA аймағы)",
     lang_label: "Тіл",
+    seo_title: "Kosta Media — ресми TikTok LIVE агенттігі · Қазақстан, Өзбекстан, Қырғызстан",
+    seo_description: "Kosta Media — Қазақстан, Өзбекстан және Қырғызстан үшін ресми TikTok LIVE агенттігі. 0% комиссия, жеке менеджер, бандарда көмек. 500+ стример.",
+    og_title: "Kosta Media — ресми TikTok LIVE агенттігі · CCA",
+    og_description: "Қазақстан, Өзбекстан және Қырғызстан үшін ресми TikTok LIVE агенттігі. 0% комиссия, жеке менеджер, бандарда көмек, өсу үшін сыйлықтар.",
+    org_description: "Қазақстан, Өзбекстан, Қырғызстан және CCA аймағының стримерлеріне арналған ресми TikTok LIVE серіктес агенттігі. Стримерден 0% комиссия, жеке менеджер, бандар мен бұғаттауларда көмек, эфир стратегиясы, өсу үшін сыйлықтар.",
   },
   kg: {
     nav_about: "Биз жөнүндө",
@@ -366,6 +386,11 @@ window.KM_I18N = {
     form_or: "же түз жазгыла",
     footer_rights: "Расмий TikTok LIVE агенттиги · Казакстан, Өзбекстан, Кыргызстан (CCA аймагы)",
     lang_label: "Тил",
+    seo_title: "Kosta Media — расмий TikTok LIVE агенттиги · Казакстан, Өзбекстан, Кыргызстан",
+    seo_description: "Kosta Media — Казакстан, Өзбекстан жана Кыргызстан үчүн расмий TikTok LIVE агенттиги. 0% комиссия, жеке менеджер, бандарда жардам. 500+ стример.",
+    og_title: "Kosta Media — расмий TikTok LIVE агенттиги · CCA",
+    og_description: "Казакстан, Өзбекстан жана Кыргызстан үчүн расмий TikTok LIVE агенттиги. 0% комиссия, жеке менеджер, бандарда жардам, өсүү үчүн белектер.",
+    org_description: "Казакстан, Өзбекстан, Кыргызстан жана CCA аймагынын стримерлери үчүн расмий TikTok LIVE өнөктөш агенттиги. Стримерден 0% комиссия, жеке менеджер, бандар менен бөгөттөөлөрдө жардам, эфир стратегиясы, өсүү үчүн белектер."
   }
 };
 

@@ -390,6 +390,8 @@ html[lang="ky"] .t-h3 {
 .lang-option {
   display: flex; align-items: center; gap: 10px;
   width: 100%;
+  text-decoration: none;
+  box-sizing: border-box;
   padding: 10px 12px;
   border: none;
   border-radius: var(--r-sm);
@@ -771,6 +773,17 @@ footer {
 .footer-rights {
   font-size: 12px; color: var(--ink-3); font-family: 'Inter';
 }
+.footer-langs {
+  display: flex; flex-wrap: wrap; gap: 6px 14px;
+  font-size: 12px; font-family: 'Inter';
+}
+.footer-langs a {
+  color: var(--ink-3);
+  text-decoration: none;
+  transition: color .15s;
+}
+.footer-langs a:hover { color: var(--ink); }
+.footer-langs a.active { color: var(--cyan); }
 
 /* ─── Sticky CTA ─── */
 .sticky-cta {
