@@ -5,8 +5,10 @@ Allow: /
 Disallow: /go.html
 
 # Поисковые и ИИ-краулеры, которым мы явно разрешаем читать и цитировать сайт.
-# ВНИМАНИЕ: Cloudflare Managed robots.txt (AI Crawl Control) дописывает свой
-# блок ниже и может перекрыть эти правила — отключать нужно в дашборде Cloudflare.
+#
+# Если в Cloudflare (AI Crawl Control -> Overview) снова включить настройку
+# "Managed robots.txt", она допишет свой блок с запретами поверх этого файла
+# и перекроет правила ниже. Выключается только из дашборда, файлом не чинится.
 
 User-agent: OAI-SearchBot
 Allow: /
