@@ -330,6 +330,13 @@ function main() {
   fs.writeFileSync(path.join(ROOT, 'assets', 'og-cover.png'), encodePng(OG_W, OG_H, og.data));
   console.log('  assets/og-cover.png        1200x630');
 
+  // Уменьшенный глиф для шапки и футера. Оригинал — 1024x1024 и почти 300 КБ,
+  // а показывается он размером 40x40. Ужимаем до 128 (хватает на 3x-экраны).
+  // Делается до keyOutBackground: тёмная подложка нужна, чтобы вид не поменялся.
+  const glyph128 = resize(glyph, 128, 128);
+  fs.writeFileSync(path.join(ROOT, 'assets', 'logo-glyph-128.png'), encodePng(128, 128, glyph128.data));
+  console.log('  assets/logo-glyph-128.png   128x128');
+
   // apple-touch-icon 180x180 на фирменном фоне (прозрачность там не поддерживается)
   const touch = makeBackdrop(180, 180);
   keyOutBackground(glyph, 28);
