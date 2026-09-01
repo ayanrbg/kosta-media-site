@@ -1,0 +1,41 @@
+# Kosta Media — https://kosta.media/
+
+User-agent: *
+Allow: /
+Disallow: /go.html
+
+# Поисковые и ИИ-краулеры, которым мы явно разрешаем читать и цитировать сайт.
+# ВНИМАНИЕ: Cloudflare Managed robots.txt (AI Crawl Control) дописывает свой
+# блок ниже и может перекрыть эти правила — отключать нужно в дашборде Cloudflare.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://kosta.media/sitemap.xml

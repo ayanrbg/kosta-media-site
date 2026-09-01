@@ -72,7 +72,7 @@ window.KM_I18N = {
     form_contact: "Телефон или @telegram",
     form_submit: "Подать заявку",
     form_or: "или напишите напрямую",
-    footer_rights: "Официальное TikTok-агентство · CCA регион",
+    footer_rights: "Официальное TikTok LIVE агентство · Казахстан, Узбекистан, Кыргызстан (регион CCA)",
     lang_label: "Язык",
   },
   en: {
@@ -145,7 +145,7 @@ window.KM_I18N = {
     form_contact: "Phone or @telegram",
     form_submit: "Send request",
     form_or: "or message us directly",
-    footer_rights: "Official TikTok agency · CCA region",
+    footer_rights: "Official TikTok LIVE agency · Kazakhstan, Uzbekistan, Kyrgyzstan (CCA region)",
     lang_label: "Language",
   },
   uz: {
@@ -218,7 +218,7 @@ window.KM_I18N = {
     form_contact: "Telefon yoki @telegram",
     form_submit: "Ariza yuborish",
     form_or: "yoki to'g'ridan-to'g'ri yozing",
-    footer_rights: "Rasmiy TikTok agentligi · CCA mintaqasi",
+    footer_rights: "Rasmiy TikTok LIVE agentligi · Qozogʻiston, Oʻzbekiston, Qirgʻiziston (CCA mintaqasi)",
     lang_label: "Til",
   },
   kz: {
@@ -291,7 +291,7 @@ window.KM_I18N = {
     form_contact: "Телефон немесе @telegram",
     form_submit: "Өтінім жіберу",
     form_or: "немесе тікелей жаз",
-    footer_rights: "Ресми TikTok агенттігі · CCA аймағы",
+    footer_rights: "Ресми TikTok LIVE агенттігі · Қазақстан, Өзбекстан, Қырғызстан (CCA аймағы)",
     lang_label: "Тіл",
   },
   kg: {
@@ -364,7 +364,7 @@ window.KM_I18N = {
     form_contact: "Телефон же @telegram",
     form_submit: "Арыз жөнөтүү",
     form_or: "же түз жазгыла",
-    footer_rights: "Расмий TikTok агенттиги · CCA аймагы",
+    footer_rights: "Расмий TikTok LIVE агенттиги · Казакстан, Өзбекстан, Кыргызстан (CCA аймагы)",
     lang_label: "Тил",
   }
 };
