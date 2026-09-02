@@ -30,5 +30,13 @@
   Cache-Control: public, max-age=3600
   Content-Type: text/plain; charset=utf-8
 
+/llms-full.txt
+  Cache-Control: public, max-age=3600
+  Content-Type: text/plain; charset=utf-8
+
+/site.webmanifest
+  Cache-Control: public, max-age=86400
+  Content-Type: application/manifest+json; charset=utf-8
+
 /robots.txt
   Cache-Control: public, max-age=3600

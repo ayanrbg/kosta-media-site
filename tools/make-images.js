@@ -337,13 +337,26 @@ function main() {
   fs.writeFileSync(path.join(ROOT, 'assets', 'logo-glyph-128.png'), encodePng(128, 128, glyph128.data));
   console.log('  assets/logo-glyph-128.png   128x128');
 
-  // apple-touch-icon 180x180 на фирменном фоне (прозрачность там не поддерживается)
-  const touch = makeBackdrop(180, 180);
+  // Иконки на фирменном фоне (прозрачность в apple-touch-icon не поддерживается)
   keyOutBackground(glyph, 28);
-  const glyph140 = resize(glyph, 148, 148);
-  drawOver(touch, glyph140, 16, 16);
-  fs.writeFileSync(path.join(ROOT, 'assets', 'apple-touch-icon.png'), encodePng(180, 180, touch.data));
-  console.log('  assets/apple-touch-icon.png 180x180');
+
+  function iconOnBackdrop(size, pad) {
+    const canvas = makeBackdrop(size, size);
+    const inner = resize(glyph, size - pad * 2, size - pad * 2);
+    drawOver(canvas, inner, pad, pad);
+    return encodePng(size, size, canvas.data);
+  }
+
+  const touch = iconOnBackdrop(180, 16);
+  fs.writeFileSync(path.join(ROOT, 'assets', 'apple-touch-icon.png'), touch);
+  // iOS и часть краулеров запрашивают этот файл из корня независимо от <link>.
+  fs.writeFileSync(path.join(ROOT, 'apple-touch-icon.png'), touch);
+  console.log('  assets/apple-touch-icon.png 180x180  (+ копия в корне)');
+
+  for (const size of [192, 512]) {
+    fs.writeFileSync(path.join(ROOT, 'assets', 'icon-' + size + '.png'), iconOnBackdrop(size, Math.round(size * 0.09)));
+    console.log('  assets/icon-' + size + '.png' + ' '.repeat(14 - String(size).length) + size + 'x' + size);
+  }
 
   // favicon.ico 48x48 — боты и старые браузеры просят его по корневому пути
   const fav = resize(glyph, 48, 48);

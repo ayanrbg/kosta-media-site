@@ -417,6 +417,78 @@ ${LOCALES.map((l) => `- ${l.hreflang}: ${urlFor(l)}`).join('\n')}
 `;
 }
 
+// ─── site.webmanifest ───
+function buildManifest() {
+  const t = (key) => I18N.ru[key];
+  return JSON.stringify({
+    name: 'Kosta Media',
+    short_name: 'Kosta Media',
+    description: t('seo_description'),
+    lang: 'ru',
+    start_url: '/',
+    scope: '/',
+    display: 'standalone',
+    background_color: '#07070a',
+    theme_color: '#07070a',
+    icons: [
+      { src: '/assets/logo-glyph-128.png', sizes: '128x128', type: 'image/png' },
+      { src: '/assets/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { src: '/assets/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { src: '/assets/icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+    ],
+  }, null, 2) + '\n';
+}
+
+// ─── llms-full.txt — полный текст сайта для ИИ-агентов ───
+// llms.txt даёт выжимку, llms-full.txt — всё содержимое целиком.
+function buildLlmsFull() {
+  const out = [];
+  out.push('# Kosta Media — полное содержимое сайта\n');
+  out.push('> ' + I18N.ru.org_description + '\n');
+
+  for (const loc of LOCALES) {
+    const dict = I18N[loc.code];
+    const t = (key) => (dict[key] !== undefined ? dict[key] : I18N.ru[key]);
+    out.push('\n---\n');
+    out.push('## ' + urlFor(loc) + ' (' + loc.hreflang + ')\n');
+    out.push('**' + t('seo_title') + '**\n');
+    out.push(t('seo_description') + '\n');
+    out.push('### ' + t('badge_official'));
+    out.push(t('hero_title').replace(/\|/g, ' ').replace(/\n/g, ' ') + ' — ' + t('hero_sub'));
+    out.push(t('hero_free') + '. ' + t('badge_note') + '\n');
+
+    out.push('### ' + t('perks_title'));
+    PERKS.forEach((p) => out.push('- **' + t(p.tKey) + '** — ' + t(p.dKey)));
+    out.push('');
+
+    out.push('### ' + t('how_title'));
+    HOW.forEach((s, i) => out.push((i + 1) + '. **' + t(s.tKey) + '** — ' + t(s.dKey)));
+    out.push('');
+
+    out.push('### ' + t('prizes_title'));
+    out.push(t('prizes_sub'));
+    TIERS.forEach((tier) => out.push('- ' + t(tier.labelKey) + ' — ' + t('prizes_label')));
+    out.push('');
+
+    out.push('### ' + t('proof_title'));
+    out.push([t('proof_streamers'), t('proof_years'), t('perk5_t'), t('proof_support')].join(' · '));
+    QUOTES.forEach((q) => out.push('> ' + t(q.qKey) + ' — ' + q.name + ', ' + q.role));
+    out.push('');
+
+    out.push('### ' + t('faq_title'));
+    FAQ.forEach((pair) => out.push('**' + t(pair[0]) + '**\n' + t(pair[1]) + '\n'));
+  }
+
+  out.push('\n---\n');
+  out.push('## Контакты\n');
+  out.push('- Сайт: ' + SITE + '/');
+  out.push('- WhatsApp: ' + WA_URL);
+  out.push('- Telegram: ' + TG_URL);
+  out.push('- Заявка через TikTok: ' + APPLY_URL);
+
+  return out.join('\n') + '\n';
+}
+
 // ─── Запуск ───
 function main() {
   const template = fs.readFileSync(path.join(__dirname, 'src', 'template.html'), 'utf8');
@@ -433,10 +505,14 @@ function main() {
 
   fs.writeFileSync(path.join(__dirname, 'sitemap.xml'), buildSitemap(), 'utf8');
   fs.writeFileSync(path.join(__dirname, 'llms.txt'), buildLlmsTxt(), 'utf8');
+  fs.writeFileSync(path.join(__dirname, 'llms-full.txt'), buildLlmsFull(), 'utf8');
+  fs.writeFileSync(path.join(__dirname, 'site.webmanifest'), buildManifest(), 'utf8');
 
   written.forEach((w) => console.log('  ' + w.file.padEnd(20) + (w.bytes / 1024).toFixed(1) + ' KB'));
   console.log('  sitemap.xml          ' + LOCALES.length + ' URL');
   console.log('  llms.txt');
+  console.log('  llms-full.txt');
+  console.log('  site.webmanifest');
   console.log('\nГотово: ' + LOCALES.length + ' страниц.');
 }
 
