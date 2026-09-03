@@ -32,8 +32,9 @@
   }
 
   // ─── Аналитика ───
-  // Отправляем одно событие cta_click со свойствами вместо отдельного события
-  // на каждую кнопку: в Zaraz тогда нужно настроить один триггер, а не пять.
+  // У каждой кнопки своё имя события: тогда в отчётах GA4 они видны
+  // отдельными строками сразу, без настройки разбивки по параметрам.
+  // Место нажатия и язык едут в свойствах.
   // Приёмник определяется автоматически — Zaraz, gtag или dataLayer.
   function track(name, props) {
     try {
@@ -96,14 +97,14 @@
 
     document.querySelectorAll('[data-apply-link]').forEach(function (a) {
       a.addEventListener('click', function (e) {
-        track('cta_click', { action: 'apply', place: placeOf(a) });
+        track('apply_click', { place: placeOf(a) });
         handleDeepLink(e, tiktokAndroid, tiktokIOS, APPLY_URL);
       });
     });
 
     document.querySelectorAll('[data-tg-link]').forEach(function (a) {
       a.addEventListener('click', function (e) {
-        track('cta_click', { action: 'telegram', place: placeOf(a) });
+        track('telegram_click', { place: placeOf(a) });
         handleDeepLink(e, tgAndroid, tgIOS, tgFallback);
       });
     });
@@ -112,7 +113,7 @@
     // здесь только отметка о клике.
     document.querySelectorAll('[data-wa-link]').forEach(function (a) {
       a.addEventListener('click', function () {
-        track('cta_click', { action: 'whatsapp', place: placeOf(a) });
+        track('whatsapp_click', { place: placeOf(a) });
       });
     });
   }

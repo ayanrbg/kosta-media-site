@@ -72,12 +72,18 @@ node tools/make-images.js
 
 | Событие | Когда | Свойства |
 |---|---|---|
-| `cta_click` | клик по «Подать заявку», WhatsApp или Telegram | `action`: `apply` / `whatsapp` / `telegram`<br>`place`: `nav` / `menu` / `hero` / `cta` / `sticky`<br>`lang` |
+| `apply_click` | «Подать заявку» | `place`, `lang` |
+| `whatsapp_click` | кнопка WhatsApp | `place`, `lang` |
+| `telegram_click` | кнопка Telegram | `place`, `lang` |
 | `faq_open` | раскрыли вопрос в FAQ | `number`, `question`, `lang` |
 | `lang_switch` | выбрали язык в переключателе | `to`, `lang` |
 
-Событие на все кнопки одно (`cta_click`), а что именно нажали — в свойствах.
-Так в Zaraz настраивается один триггер вместо пяти.
+`place` — где была нажата кнопка: `nav`, `menu`, `hero`, `cta`, `sticky`.
+
+У каждой кнопки своё имя события, чтобы в отчётах GA4 они были отдельными
+строками без настройки разбивки по параметрам. Встроенное действие `Events`
+в компоненте GA4 пересылает вызовы `zaraz.track()` само — отдельные триггеры
+в Zaraz настраивать не нужно.
 
 `place` вычисляется из положения кнопки в разметке (`placeOf()` в `app.js`),
 поэтому шаблон не нужно засорять атрибутами.
