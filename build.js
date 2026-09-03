@@ -11,6 +11,15 @@
 
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
+
+// Метка версии для styles.css и app.js. Файлы отдаются с длинным кэшем,
+// поэтому без неё правки доезжали бы до вернувшихся посетителей только через
+// сутки. Меняется вместе с содержимым файла — старый кэш сбрасывается сам.
+function assetVersion(file) {
+  const buf = fs.readFileSync(path.join(__dirname, file));
+  return '?v=' + crypto.createHash('md5').update(buf).digest('hex').slice(0, 8);
+}
 
 // ─── Загружаем словарь ───
 global.window = {};
@@ -319,6 +328,8 @@ function buildPage(loc, template) {
     '{{OG_DESCRIPTION}}': esc(t('og_description')),
     '{{CANONICAL}}': urlFor(loc),
     '{{ROOT}}': root,
+    '{{VER_CSS}}': assetVersion('styles.css'),
+    '{{VER_JS}}': assetVersion('app.js'),
     '{{APPLY_URL}}': esc(APPLY_URL),
     '{{WA_URL}}': esc(WA_URL),
     '{{TG_URL}}': esc(TG_URL),
