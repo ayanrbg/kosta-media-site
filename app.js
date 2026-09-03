@@ -31,6 +31,37 @@
     }
   }
 
+  // ─── Аналитика ───
+  // Отправляем одно событие cta_click со свойствами вместо отдельного события
+  // на каждую кнопку: в Zaraz тогда нужно настроить один триггер, а не пять.
+  // Приёмник определяется автоматически — Zaraz, gtag или dataLayer.
+  function track(name, props) {
+    try {
+      var data = props || {};
+      data.lang = currentLang;
+      if (window.zaraz && typeof window.zaraz.track === 'function') {
+        window.zaraz.track(name, data);
+      } else if (typeof window.gtag === 'function') {
+        window.gtag('event', name, data);
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(Object.assign({ event: name }, data));
+      }
+    } catch (e) { /* аналитика не должна ломать страницу */ }
+  }
+
+  // Откуда именно нажали — определяем по месту кнопки в разметке,
+  // чтобы не засорять шаблон атрибутами.
+  function placeOf(el) {
+    if (!el || !el.closest) return 'other';
+    if (el.closest('.sticky-cta')) return 'sticky';
+    if (el.closest('.mobile-menu')) return 'menu';
+    if (el.closest('.nav')) return 'nav';
+    if (el.closest('#hero')) return 'hero';
+    if (el.closest('.final-cta-card')) return 'cta';
+    return 'other';
+  }
+
   // ─── Deep links для in-app браузеров ───
   function handleDeepLink(e, androidIntent, iosUrl, fallbackUrl) {
     var ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -65,13 +96,23 @@
 
     document.querySelectorAll('[data-apply-link]').forEach(function (a) {
       a.addEventListener('click', function (e) {
+        track('cta_click', { action: 'apply', place: placeOf(a) });
         handleDeepLink(e, tiktokAndroid, tiktokIOS, APPLY_URL);
       });
     });
 
     document.querySelectorAll('[data-tg-link]').forEach(function (a) {
       a.addEventListener('click', function (e) {
+        track('cta_click', { action: 'telegram', place: placeOf(a) });
         handleDeepLink(e, tgAndroid, tgIOS, tgFallback);
+      });
+    });
+
+    // WhatsApp открывается в новой вкладке и deep-link ему не нужен —
+    // здесь только отметка о клике.
+    document.querySelectorAll('[data-wa-link]').forEach(function (a) {
+      a.addEventListener('click', function () {
+        track('cta_click', { action: 'whatsapp', place: placeOf(a) });
       });
     });
   }
@@ -79,11 +120,16 @@
   // ─── FAQ аккордеон (разметка уже в HTML) ───
   function initFAQ() {
     var items = document.querySelectorAll('.faq-item');
-    items.forEach(function (btn) {
+    items.forEach(function (btn, i) {
       btn.addEventListener('click', function () {
         var wasOpen = btn.classList.contains('open');
         items.forEach(function (o) { o.classList.remove('open'); });
-        if (!wasOpen) btn.classList.add('open');
+        if (!wasOpen) {
+          btn.classList.add('open');
+          // Какие вопросы открывают — видно, что людей на самом деле волнует.
+          var q = btn.querySelector('.faq-question');
+          track('faq_open', { number: i + 1, question: q ? q.textContent : '' });
+        }
       });
     });
   }
@@ -188,16 +234,16 @@
     document.querySelectorAll('[data-lang]').forEach(function (a) {
       a.addEventListener('click', function () {
         try { localStorage.setItem('km_lang', a.dataset.lang); } catch (err) { }
+        track('lang_switch', { to: a.dataset.lang });
       });
     });
   }
 
   // ─── Init ───
   function init() {
-    // Текущий язык записываем, только если посетитель уже на языковой версии.
-    if (!isRoot) {
-      try { localStorage.setItem('km_lang', currentLang); } catch (e) { }
-    }
+    // Язык намеренно НЕ запоминаем при обычном заходе на языковую страницу:
+    // иначе переход по чужой ссылке на /uz/ навсегда переключил бы человеку
+    // корень сайта. Запись делает только явный клик по переключателю.
     initLangSwitch();
     initNavScroll();
     initMobileMenu();
