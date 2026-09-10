@@ -29,9 +29,8 @@ const KM_LANGS = global.window.KM_LANGS;
 
 // ─── Конфиг ───
 const SITE = 'https://kosta.media';
-const APPLY_URL = 'https://www.tiktok.com/tcn/scout_creators?use_spark=1&agency_scout_source=qr_code_leads&ShareLinkID=7636055606712926216';
+const APPLY_URL = 'https://www.tiktok.com/t/ZSqUprxKh/';
 const WA_URL = 'https://wa.me/message/WUIBSOCSSUKEG1';
-const TG_URL = 'https://t.me/kosta_tiktok';
 const OG_IMAGE = SITE + '/assets/og-cover.png';
 
 // Внутренний код языка -> директория, ISO-коды для hreflang/OG.
@@ -237,7 +236,7 @@ function renderJsonLd(loc, t) {
         { '@type': 'Country', name: 'Uzbekistan' },
         { '@type': 'Country', name: 'Kyrgyzstan' },
       ],
-      sameAs: [WA_URL, TG_URL],
+      sameAs: [WA_URL],
       contactPoint: [{
         '@type': 'ContactPoint',
         contactType: 'customer support',
@@ -332,7 +331,6 @@ function buildPage(loc, template) {
     '{{VER_JS}}': assetVersion('app.js'),
     '{{APPLY_URL}}': esc(APPLY_URL),
     '{{WA_URL}}': esc(WA_URL),
-    '{{TG_URL}}': esc(TG_URL),
     '{{LANG_CODE}}': KM_LANGS.find((l) => l.code === loc.code).label,
     '{{LANG_CODE_INTERNAL}}': loc.code,
     '{{IS_ROOT}}': String(isRoot),
@@ -419,7 +417,6 @@ ${faq}
 
 - Сайт: ${SITE}/
 - WhatsApp: ${WA_URL}
-- Telegram: ${TG_URL}
 - Заявка через TikTok: ${APPLY_URL}
 
 ## Языковые версии
@@ -494,7 +491,6 @@ function buildLlmsFull() {
   out.push('## Контакты\n');
   out.push('- Сайт: ' + SITE + '/');
   out.push('- WhatsApp: ' + WA_URL);
-  out.push('- Telegram: ' + TG_URL);
   out.push('- Заявка через TikTok: ' + APPLY_URL);
 
   return out.join('\n') + '\n';

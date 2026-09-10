@@ -8,8 +8,7 @@
 (function () {
   'use strict';
 
-  var TG_USERNAME = 'kosta_tiktok';
-  var APPLY_URL = 'https://www.tiktok.com/tcn/scout_creators?use_spark=1&agency_scout_source=qr_code_leads&ShareLinkID=7636055606712926216';
+  var APPLY_URL = 'https://www.tiktok.com/t/ZSqUprxKh/';
 
   // ─── Язык: страница объявляет его сама ───
   var currentLang = window.KM_LANG || 'ru';
@@ -90,22 +89,10 @@
       '#Intent;package=com.zhiliaoapp.musically;scheme=snssdk1233;end;';
     var tiktokIOS = 'snssdk1233://webview?url=' + tiktokEncoded;
 
-    var tgFallback = 'https://t.me/' + TG_USERNAME;
-    var tgAndroid = 'intent://resolve?domain=' + TG_USERNAME +
-      '#Intent;package=org.telegram.messenger;scheme=tg;end;';
-    var tgIOS = 'tg://resolve?domain=' + TG_USERNAME;
-
     document.querySelectorAll('[data-apply-link]').forEach(function (a) {
       a.addEventListener('click', function (e) {
         track('apply_click', { place: placeOf(a) });
         handleDeepLink(e, tiktokAndroid, tiktokIOS, APPLY_URL);
-      });
-    });
-
-    document.querySelectorAll('[data-tg-link]').forEach(function (a) {
-      a.addEventListener('click', function (e) {
-        track('telegram_click', { place: placeOf(a) });
-        handleDeepLink(e, tgAndroid, tgIOS, tgFallback);
       });
     });
 
