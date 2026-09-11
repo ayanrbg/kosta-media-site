@@ -21,7 +21,10 @@
   // Если посетитель раньше сам выбрал язык — уважаем выбор и на корне.
   // Намеренно не определяем язык по navigator: у краулеров нет localStorage,
   // поэтому бот всегда получает корневую (русскую) версию без редиректов.
-  var LANG_DIRS = { ru: '', en: 'en/', kz: 'kk/', uz: 'uz/', kg: 'ky/' };
+  var LANG_DIRS = {
+    ru: '', en: 'en/', kz: 'kk/', uz: 'uz/', kg: 'ky/',
+    az: 'az/', ka: 'ka/', hy: 'hy/', tg: 'tg/', tk: 'tk/'
+  };
   if (isRoot) {
     var pref = savedLang();
     if (pref && LANG_DIRS[pref] !== undefined && pref !== 'ru') {

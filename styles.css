@@ -534,7 +534,7 @@ html[lang="ky"] .t-h3 {
   padding: 5px 10px;
   background: var(--pink);
   border-radius: 6px;
-  font-size: 11px; font-weight: 700; font-family: 'Inter'; color: #fff;
+  font-size: 11px; font-weight: 700; font-family: 'Inter', system-ui, sans-serif; color: #fff;
   z-index: 4;
 }
 .phone-live-dot {
@@ -546,7 +546,7 @@ html[lang="ky"] .t-h3 {
   background: rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
   border-radius: 6px;
-  font-size: 11px; font-weight: 600; color: #fff; font-family: 'Inter';
+  font-size: 11px; font-weight: 600; color: #fff; font-family: 'Inter', system-ui, sans-serif;
   z-index: 4;
 }
 .phone-radial {
@@ -571,7 +571,7 @@ html[lang="ky"] .t-h3 {
   background: rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
   border-radius: 999px;
-  font-size: 11px; font-family: 'Inter';
+  font-size: 11px; font-family: 'Inter', system-ui, sans-serif;
   width: fit-content;
 }
 .phone-counter {
@@ -582,7 +582,7 @@ html[lang="ky"] .t-h3 {
   backdrop-filter: blur(20px);
   border-radius: 14px;
   display: flex; align-items: center; justify-content: space-between;
-  font-family: 'Inter';
+  font-family: 'Inter', system-ui, sans-serif;
 }
 .phone-counter-label { font-size: 11px; color: var(--ink-3); text-transform: uppercase; }
 .phone-counter-value { font-size: 16px; font-weight: 700; color: #fff; }
@@ -625,7 +625,7 @@ html[lang="ky"] .t-h3 {
   background: var(--panel);
   border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Unbounded'; font-weight: 800; font-size: 20px;
+  font-family: 'Unbounded', 'Manrope', system-ui, sans-serif; font-weight: 800; font-size: 20px;
 }
 .how-spacer { height: 32px; }
 
@@ -647,7 +647,7 @@ html[lang="ky"] .t-h3 {
   background: rgba(255,255,255,0.05);
   border: 1px solid var(--line);
   border-radius: 999px;
-  font-size: 12px; color: var(--ink-3); font-family: 'Inter';
+  font-size: 12px; color: var(--ink-3); font-family: 'Inter', system-ui, sans-serif;
 }
 
 /* ─── Proof / testimonials ─── */
@@ -662,13 +662,13 @@ html[lang="ky"] .t-h3 {
 }
 .stat-block { text-align: center; }
 .stat-value {
-  font-family: 'Unbounded'; font-weight: 800;
+  font-family: 'Unbounded', 'Manrope', system-ui, sans-serif; font-weight: 800;
   font-size: clamp(40px, 5vw, 64px);
   line-height: 1;
   letter-spacing: -0.03em;
 }
 .stat-label {
-  font-size: 13px; color: var(--ink-3); margin-top: 8px; font-family: 'Inter';
+  font-size: 13px; color: var(--ink-3); margin-top: 8px; font-family: 'Inter', system-ui, sans-serif;
 }
 .quotes-grid {
   display: grid;
@@ -676,12 +676,12 @@ html[lang="ky"] .t-h3 {
   gap: 16px;
 }
 .quote-mark {
-  font-size: 40px; font-family: 'Unbounded'; font-weight: 800;
+  font-size: 40px; font-family: 'Unbounded', 'Manrope', system-ui, sans-serif; font-weight: 800;
   line-height: 0.6; margin-bottom: 16px;
 }
 .quote-text {
   margin: 0 0 20px; color: var(--ink); font-size: 15px;
-  font-family: 'Inter'; line-height: 1.55;
+  font-family: 'Inter', system-ui, sans-serif; line-height: 1.55;
 }
 .quote-author {
   display: flex; align-items: center; gap: 12px;
@@ -690,8 +690,8 @@ html[lang="ky"] .t-h3 {
 .quote-avatar {
   width: 36px; height: 36px; border-radius: 99px;
 }
-.quote-name { font-size: 14px; font-weight: 600; font-family: 'Inter'; }
-.quote-role { font-size: 12px; color: var(--ink-3); font-family: 'Inter'; }
+.quote-name { font-size: 14px; font-weight: 600; font-family: 'Inter', system-ui, sans-serif; }
+.quote-role { font-size: 12px; color: var(--ink-3); font-family: 'Inter', system-ui, sans-serif; }
 
 /* ─── FAQ ─── */
 .faq-list { max-width: 820px; }
@@ -704,12 +704,12 @@ html[lang="ky"] .t-h3 {
   display: flex; align-items: flex-start; gap: 16px;
 }
 .faq-num {
-  font-family: 'Unbounded'; font-weight: 600;
+  font-family: 'Unbounded', 'Manrope', system-ui, sans-serif; font-weight: 600;
   color: var(--cyan); font-size: 14px; flex-shrink: 0; padding-top: 4px;
 }
 .faq-content { flex: 1; }
 .faq-question {
-  font-family: 'Unbounded'; font-size: clamp(18px, 2vw, 22px);
+  font-family: 'Unbounded', 'Manrope', system-ui, sans-serif; font-size: clamp(18px, 2vw, 22px);
   font-weight: 600; display: block;
 }
 .faq-answer {
@@ -720,7 +720,7 @@ html[lang="ky"] .t-h3 {
   opacity: 0;
   margin-top: 0;
   color: var(--ink-2);
-  font-family: 'Inter'; font-size: 15px; line-height: 1.55;
+  font-family: 'Inter', system-ui, sans-serif; font-size: 15px; line-height: 1.55;
 }
 .faq-item.open .faq-answer {
   max-height: 200px;
@@ -767,15 +767,20 @@ footer {
   display: flex; align-items: center; gap: 12px;
 }
 .footer-logo .k-glyph { width: 28px; height: 28px; }
+/* Запасные шрифты обязательны: без них, если Google Fonts не догрузился,
+   браузер берёт шрифт по умолчанию — а это Times New Roman, и подвал
+   превращается в засечки. В нашем регионе догружается не всегда. */
 .footer-logo span {
-  font-family: 'Unbounded'; font-weight: 700; font-size: 15px;
+  font-family: 'Unbounded', 'Manrope', system-ui, sans-serif;
+  font-weight: 700; font-size: 15px;
 }
 .footer-rights {
-  font-size: 12px; color: var(--ink-3); font-family: 'Inter';
+  font-size: 12px; color: var(--ink-3);
+  font-family: 'Inter', system-ui, sans-serif;
 }
 .footer-langs {
   display: flex; flex-wrap: wrap; gap: 6px 14px;
-  font-size: 12px; font-family: 'Inter';
+  font-size: 12px; font-family: 'Inter', system-ui, sans-serif;
 }
 .footer-langs a {
   color: var(--ink-3);
@@ -829,3 +834,95 @@ footer {
   .mobile-menu { display: none !important; }
   .nav-cta-desktop { display: inline-flex; }
 }
+
+/* ══════════ Страницы-статьи ══════════ */
+.article { position: relative; overflow: hidden; padding: 120px 0 100px; }
+.article-inner { position: relative; z-index: 2; max-width: 760px; }
+
+.article-crumbs {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  font-size: 13px; color: var(--ink-3); margin-bottom: 22px;
+}
+.article-crumbs a { color: var(--cyan); text-decoration: none; }
+.article-crumbs a:hover { text-decoration: underline; }
+
+.article-title { margin: 0 0 18px; }
+.article-lead { margin: 0 0 18px; color: var(--ink-2); }
+.article-meta { color: var(--ink-4); margin-bottom: 40px; font-size: 12px; }
+
+.article-toc {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: var(--r-md); padding: 22px 26px; margin-bottom: 48px;
+}
+.article-toc-title { color: var(--cyan); margin-bottom: 12px; font-size: 12px; }
+.article-toc ol { margin: 0; padding-left: 20px; color: var(--ink-3); }
+.article-toc li { margin: 7px 0; }
+.article-toc a { color: var(--ink-2); text-decoration: none; }
+.article-toc a:hover { color: var(--cyan); }
+
+.article-section { margin-bottom: 52px; scroll-margin-top: 90px; }
+.article-body h2 { margin: 0 0 18px; scroll-margin-top: 90px; }
+.article-body h3 { margin: 30px 0 12px; }
+.article-body p { margin: 0 0 16px; color: var(--ink-2); font-size: 16px; line-height: 1.7; }
+.article-body ul, .article-body ol { margin: 0 0 18px; padding-left: 22px; }
+.article-body li { color: var(--ink-2); font-size: 16px; line-height: 1.7; margin: 9px 0; }
+
+.article-note {
+  background: linear-gradient(180deg, rgba(0,229,255,0.07), transparent 70%);
+  border: 1px solid var(--line-2); border-left: 3px solid var(--cyan);
+  border-radius: var(--r-sm); padding: 20px 24px; margin: 26px 0;
+}
+.article-note-title {
+  font-family: Unbounded, sans-serif; font-weight: 600;
+  font-size: 15px; color: var(--ink); margin-bottom: 10px;
+}
+.article-note p:last-child, .article-note ul:last-child { margin-bottom: 0; }
+
+.article-table-wrap { overflow-x: auto; margin: 0 0 22px; }
+.article-table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 460px; }
+.article-table th, .article-table td {
+  text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--line);
+  vertical-align: top; color: var(--ink-2); line-height: 1.6;
+}
+.article-table th {
+  color: var(--ink); font-family: Unbounded, sans-serif;
+  font-weight: 600; font-size: 13px; border-bottom-color: var(--line-2);
+}
+.article-table tr:last-child td { border-bottom: none; }
+
+.article-sources {
+  border-top: 1px solid var(--line); padding-top: 36px; margin-top: 12px;
+}
+.article-sources ul { margin: 0; padding: 0; list-style: none; }
+.article-sources li { margin-bottom: 18px; }
+.article-sources a {
+  color: var(--cyan); text-decoration: none; font-size: 15px;
+  display: block; margin-bottom: 4px; line-height: 1.5;
+}
+.article-sources a:hover { text-decoration: underline; }
+.article-source-note { color: var(--ink-4); font-size: 13px; line-height: 1.5; }
+
+.article-cta { margin-top: 56px; padding: 34px; text-align: center; }
+.article-cta-btns {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+}
+
+@media (max-width: 720px) {
+  .article { padding: 96px 0 72px; }
+  .article-toc { padding: 18px 20px; margin-bottom: 36px; }
+  .article-cta { padding: 26px 20px; }
+}
+
+.footer-articles {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px;
+  padding-bottom: 26px; margin-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+  font-family: 'Inter', system-ui, sans-serif; font-size: 13px;
+}
+.footer-articles-title {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--cyan);
+}
+.footer-articles a { color: var(--ink-3); text-decoration: none; transition: color .15s; }
+.footer-articles a:hover { color: var(--ink); text-decoration: underline; }

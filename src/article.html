@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="{{HTML_LANG}}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}}</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+  <link rel="canonical" href="{{CANONICAL}}">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+  <meta property="og:site_name" content="Kosta Media">
+  <meta property="og:title" content="{{OG_TITLE}}">
+  <meta property="og:description" content="{{DESCRIPTION}}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{CANONICAL}}">
+  <meta property="og:image" content="https://kosta.media/assets/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="{{OG_LOCALE}}">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{OG_TITLE}}">
+  <meta name="twitter:description" content="{{DESCRIPTION}}">
+  <meta name="twitter:image" content="https://kosta.media/assets/og-cover.png">
+
+  <link rel="icon" href="{{ROOT}}favicon.ico" sizes="32x32">
+  <link rel="icon" type="image/png" sizes="128x128" href="{{ROOT}}assets/logo-glyph-128.png">
+  <link rel="apple-touch-icon" href="{{ROOT}}assets/apple-touch-icon.png">
+  <link rel="manifest" href="{{ROOT}}site.webmanifest">
+  <meta name="theme-color" content="#07070a">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{{ROOT}}styles.css{{VER_CSS}}">
+
+  <script type="application/ld+json">
+{{JSONLD}}
+  </script>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="{{ROOT}}" class="nav-logo">
+        <div class="k-glyph"></div>
+        <span class="nav-logo-text">Kosta Media</span>
+      </a>
+      <div class="nav-actions">
+        <a href="{{APPLY_URL}}" data-apply-link target="_top" class="btn btn-cyan nav-cta-desktop">{{t:apply_btn}}</a>
+        <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost"
+          style="padding:9px 16px;font-size:14px">WhatsApp</a>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <div class="glow"
+      style="width:520px;height:520px;background:var(--cyan);opacity:0.12;top:-180px;left:-160px"></div>
+
+    <div class="container article-inner">
+      <nav class="article-crumbs" aria-label="breadcrumb">
+        <a href="{{ROOT}}">Kosta Media</a>
+        <span>/</span>
+        <span>{{CRUMB}}</span>
+      </nav>
+
+      <h1 class="t-h1 article-title">{{H1}}</h1>
+      <p class="t-body-lg article-lead">{{LEAD}}</p>
+      <div class="article-meta t-mono">{{UPDATED_LABEL}}</div>
+
+      <nav class="article-toc" aria-label="Содержание">
+        <div class="article-toc-title t-mono">Содержание</div>
+        <ol>{{TOC}}</ol>
+      </nav>
+
+      <div class="article-body">{{BODY}}</div>
+
+      <section class="article-sources">
+        <h2 class="t-h3" style="margin:0 0 16px">Официальные источники</h2>
+        <p class="t-body" style="margin:0 0 20px;font-size:14px">
+          Все утверждения о правилах платформы на этой странице опираются на материалы TikTok.
+          Правила меняются — проверяйте первоисточник.
+        </p>
+        <ul>{{SOURCES}}</ul>
+      </section>
+
+      <section class="article-cta card">
+        <h2 class="t-h3" style="margin:0 0 10px">{{t:cta_title}}</h2>
+        <p class="t-body" style="margin:0 0 20px">{{t:cta_sub}}</p>
+        <div class="article-cta-btns">
+          <a href="{{APPLY_URL}}" data-apply-link target="_top" class="btn btn-cyan">{{t:apply_btn}}</a>
+          <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost">WhatsApp</a>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <div class="k-glyph"></div>
+        <span>Kosta Media</span>
+      </div>
+      <div class="footer-rights">
+        <span>{{t:footer_rights}}</span> · kosta.media
+      </div>
+      <nav class="footer-langs" aria-label="{{t:lang_label}}">
+        <a href="{{ROOT}}">← {{BACK_LABEL}}</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>window.KM_LANG = "{{LANG_CODE_INTERNAL}}"; window.KM_IS_ROOT = false;</script>
+  <script src="{{ROOT}}app.js{{VER_JS}}" defer></script>
+
+</body>
+
+</html>
