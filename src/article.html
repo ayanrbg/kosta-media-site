@@ -32,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Armenian:wght@400;500;600;700;800&family=Noto+Sans+Georgian:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="{{ROOT}}styles.css{{VER_CSS}}">
 
@@ -50,16 +50,15 @@
         <span class="nav-logo-text">Kosta Media</span>
       </a>
       <div class="nav-actions">
-        <a href="{{APPLY_URL}}" data-apply-link target="_top" class="btn btn-cyan nav-cta-desktop">{{t:apply_btn}}</a>
-        <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost"
-          style="padding:9px 16px;font-size:14px">WhatsApp</a>
+        <a href="{{APPLY_URL}}" data-apply-link target="_top" class="btn btn-main btn-main-sm nav-cta-desktop">{{t:apply_btn}}</a>
+        <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-wa nav-wa">WhatsApp</a>
       </div>
     </div>
   </nav>
 
   <article class="article">
     <div class="glow"
-      style="width:520px;height:520px;background:var(--cyan);opacity:0.12;top:-180px;left:-160px"></div>
+      style="width:520px;height:520px;--c:var(--cyan);opacity:0.12;top:-180px;left:-160px"></div>
 
     <div class="container article-inner">
       <nav class="article-crumbs" aria-label="breadcrumb">
@@ -92,8 +91,8 @@
         <h2 class="t-h3" style="margin:0 0 10px">{{t:cta_title}}</h2>
         <p class="t-body" style="margin:0 0 20px">{{t:cta_sub}}</p>
         <div class="article-cta-btns">
-          <a href="{{APPLY_URL}}" data-apply-link target="_top" class="btn btn-cyan">{{t:apply_btn}}</a>
-          <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost">WhatsApp</a>
+          <a href="{{APPLY_URL}}" data-apply-link target="_top" class="btn btn-main"><span>{{t:apply_btn}}</span>{{ARROW}}</a>
+          <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-wa">WhatsApp</a>
         </div>
       </section>
     </div>

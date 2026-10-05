@@ -61,6 +61,7 @@
     if (el.closest('.mobile-menu')) return 'menu';
     if (el.closest('.nav')) return 'nav';
     if (el.closest('#hero')) return 'hero';
+    if (el.closest('#how')) return 'how';
     if (el.closest('.final-cta-card')) return 'cta';
     return 'other';
   }
@@ -114,9 +115,13 @@
     items.forEach(function (btn, i) {
       btn.addEventListener('click', function () {
         var wasOpen = btn.classList.contains('open');
-        items.forEach(function (o) { o.classList.remove('open'); });
+        items.forEach(function (o) {
+          o.classList.remove('open');
+          o.setAttribute('aria-expanded', 'false');
+        });
         if (!wasOpen) {
           btn.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
           // Какие вопросы открывают — видно, что людей на самом деле волнует.
           var q = btn.querySelector('.faq-question');
           track('faq_open', { number: i + 1, question: q ? q.textContent : '' });
@@ -157,24 +162,53 @@
       var obs = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          var delay = parseInt(el.style.transitionDelay, 10) || 0;
-          setTimeout(function () { el.classList.add('in'); }, delay);
+          // Задержку берёт на себя transition-delay из разметки — второй
+          // раз через setTimeout её не добавляем, иначе блоки появлялись вдвое дольше.
+          el.classList.add('in');
           obs.unobserve(el);
         });
-      }, { threshold: 0.15 });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
       obs.observe(el);
     });
   }
 
   // ─── Состояние навигации при скролле ───
+  // Нижняя кнопка на телефоне прячется, пока на экране финальный блок
+  // с той же кнопкой, — две одинаковые кнопки рядом только мешают.
   function initNavScroll() {
     var nav = document.querySelector('.nav');
     var sticky = document.querySelector('.sticky-cta');
+    var finalCta = document.querySelector('.final-cta-card');
     if (!nav && !sticky) return;
-    window.addEventListener('scroll', function () {
+    var finalInView = false;
+
+    function update() {
       if (nav) nav.classList.toggle('scrolled', window.scrollY > 20);
-      if (sticky) sticky.classList.toggle('visible', window.scrollY > 600);
-    }, { passive: true });
+      if (sticky) sticky.classList.toggle('visible', window.scrollY > 600 && !finalInView);
+    }
+
+    if (finalCta && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        finalInView = entries[0].isIntersecting;
+        update();
+      }).observe(finalCta);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
+  // ─── Подсветка карточек под курсором ───
+  // Только для мыши: на тач-экранах «курсора» нет, а лишние слушатели ни к чему.
+  // Координаты уходят в CSS-переменные --mx/--my, рисует подсветку styles.css.
+  function initCardSpotlight() {
+    if (!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    document.querySelectorAll('.card').forEach(function (card) {
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+      });
+    });
   }
 
   // ─── Мобильное меню ───
@@ -241,6 +275,7 @@
     initDeepLinks();
     initFAQ();
     initCounters();
+    initCardSpotlight();
     observeReveals();
   }
 
