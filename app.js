@@ -61,6 +61,7 @@
     if (el.closest('.mobile-menu')) return 'menu';
     if (el.closest('.nav')) return 'nav';
     if (el.closest('#hero')) return 'hero';
+    if (el.closest('#how')) return 'how';
     if (el.closest('.final-cta-card')) return 'cta';
     return 'other';
   }
@@ -114,9 +115,13 @@
     items.forEach(function (btn, i) {
       btn.addEventListener('click', function () {
         var wasOpen = btn.classList.contains('open');
-        items.forEach(function (o) { o.classList.remove('open'); });
+        items.forEach(function (o) {
+          o.classList.remove('open');
+          o.setAttribute('aria-expanded', 'false');
+        });
         if (!wasOpen) {
           btn.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
           // Какие вопросы открывают — видно, что людей на самом деле волнует.
           var q = btn.querySelector('.faq-question');
           track('faq_open', { number: i + 1, question: q ? q.textContent : '' });
@@ -157,24 +162,102 @@
       var obs = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          var delay = parseInt(el.style.transitionDelay, 10) || 0;
-          setTimeout(function () { el.classList.add('in'); }, delay);
+          // Задержку берёт на себя transition-delay из разметки — второй
+          // раз через setTimeout её не добавляем, иначе блоки появлялись вдвое дольше.
+          el.classList.add('in');
           obs.unobserve(el);
         });
-      }, { threshold: 0.15 });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
       obs.observe(el);
     });
   }
 
   // ─── Состояние навигации при скролле ───
+  // Нижняя кнопка на телефоне прячется, пока на экране финальный блок
+  // с той же кнопкой, — две одинаковые кнопки рядом только мешают.
   function initNavScroll() {
     var nav = document.querySelector('.nav');
     var sticky = document.querySelector('.sticky-cta');
+    var finalCta = document.querySelector('.final-cta-card');
     if (!nav && !sticky) return;
-    window.addEventListener('scroll', function () {
-      if (nav) nav.classList.toggle('scrolled', window.scrollY > 20);
-      if (sticky) sticky.classList.toggle('visible', window.scrollY > 600);
-    }, { passive: true });
+    var finalInView = false;
+
+    function update() {
+      if (nav) {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+        // Полоса прогресса прокрутки под меню
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        nav.style.setProperty('--scroll', max > 0 ? Math.min(1, window.scrollY / max).toFixed(4) : 0);
+      }
+      if (sticky) sticky.classList.toggle('visible', window.scrollY > 600 && !finalInView);
+    }
+
+    if (finalCta && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        finalInView = entries[0].isIntersecting;
+        update();
+      }).observe(finalCta);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
+  // ─── Эффекты за курсором ───
+  // Только для мыши: на тач-экранах «курсора» нет, а лишние слушатели ни к чему.
+  // JS лишь пишет координаты в CSS-переменные, всё рисует styles.css.
+  var finePointer = !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  // Карточки: подсветка под курсором (--mx/--my) и наклон в 3D (--rx/--ry)
+  function initCardSpotlight() {
+    if (!finePointer) return;
+    document.querySelectorAll('.card').forEach(function (card) {
+      card.classList.add('tilt');
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        var x = e.clientX - r.left, y = e.clientY - r.top;
+        card.style.setProperty('--mx', x + 'px');
+        card.style.setProperty('--my', y + 'px');
+        card.style.setProperty('--ry', ((x / r.width - 0.5) * 7).toFixed(2) + 'deg');
+        card.style.setProperty('--rx', ((0.5 - y / r.height) * 7).toFixed(2) + 'deg');
+      });
+      card.addEventListener('pointerleave', function () {
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+      });
+    });
+  }
+
+  // Кнопка заявки слегка тянется за курсором
+  function initMagnetButtons() {
+    if (!finePointer) return;
+    document.querySelectorAll('.btn-main').forEach(function (btn) {
+      btn.addEventListener('pointermove', function (e) {
+        var r = btn.getBoundingClientRect();
+        btn.style.setProperty('--mx-btn', ((e.clientX - r.left - r.width / 2) * 0.12).toFixed(1) + 'px');
+        btn.style.setProperty('--my-btn', ((e.clientY - r.top - r.height / 2) * 0.25).toFixed(1) + 'px');
+      });
+      btn.addEventListener('pointerleave', function () {
+        btn.style.setProperty('--mx-btn', '0px');
+        btn.style.setProperty('--my-btn', '0px');
+      });
+    });
+  }
+
+  // Макет телефона в первом экране поворачивается за курсором
+  function initHeroParallax() {
+    var hero = document.getElementById('hero');
+    var phone = hero && hero.querySelector('.hero-right');
+    if (!finePointer || !phone) return;
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect();
+      phone.style.setProperty('--ry-hero', ((e.clientX - r.left) / r.width - 0.5) * 16 + 'deg');
+      phone.style.setProperty('--rx-hero', (0.5 - (e.clientY - r.top) / r.height) * 10 + 'deg');
+    });
+    hero.addEventListener('pointerleave', function () {
+      phone.style.setProperty('--ry-hero', '0deg');
+      phone.style.setProperty('--rx-hero', '0deg');
+    });
   }
 
   // ─── Мобильное меню ───
@@ -241,6 +324,9 @@
     initDeepLinks();
     initFAQ();
     initCounters();
+    initCardSpotlight();
+    initMagnetButtons();
+    initHeroParallax();
     observeReveals();
   }
 

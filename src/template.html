@@ -34,12 +34,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Armenian:wght@400;500;600;700;800&family=Noto+Sans+Georgian:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="{{ROOT}}styles.css{{VER_CSS}}">
   <noscript>
     <style>
       .reveal { opacity: 1 !important; transform: none !important; }
+      .ico * { stroke-dashoffset: 0 !important; }
     </style>
   </noscript>
 
@@ -75,7 +76,7 @@
           <div class="lang-popup" id="lang-popup">{{LANG_LINKS}}</div>
         </div>
         <a href="{{APPLY_URL}}"
-          data-apply-link target="_top" class="btn btn-cyan nav-cta-desktop" data-i18n="apply_btn">{{t:apply_btn}}</a>
+          data-apply-link target="_top" class="btn btn-main btn-main-sm nav-cta-desktop" data-i18n="apply_btn">{{t:apply_btn}}</a>
         <button class="menu-btn" id="menu-btn" aria-label="menu">≡</button>
       </div>
     </div>
@@ -87,12 +88,12 @@
       <a href="#faq" data-i18n="nav_faq">{{t:nav_faq}}</a>
       <div class="mobile-menu-btns">
         <a href="{{APPLY_URL}}"
-          data-apply-link target="_top" class="btn btn-cyan" data-i18n="apply_btn">{{t:apply_btn}}</a>
+          data-apply-link target="_top" class="btn btn-main" data-i18n="apply_btn">{{t:apply_btn}}</a>
       </div>
-      <div style="display:flex;gap:8px;padding:0 20px 16px;align-items:center">
+      <div style="display:flex;gap:10px;padding:0 0 4px;align-items:center">
         <span style="color:var(--ink-3);font-size:13px;white-space:nowrap"
           data-i18n="questions_label">{{t:questions_label}}</span>
-        <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost"
+        <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-wa"
           style="flex:1;padding:8px 12px;font-size:13px">WhatsApp</a>
       </div>
     </div>
@@ -101,37 +102,35 @@
   <!-- ═══════ HERO ═══════ -->
   <div id="top"></div>
   <section id="hero">
-    <div class="glow" style="width:600px;height:600px;background:var(--cyan);opacity:0.18;top:-200px;left:-150px"></div>
-    <div class="glow" style="width:500px;height:500px;background:var(--pink);opacity:0.15;top:100px;right:-150px"></div>
-    <div class="glow" style="width:400px;height:400px;background:var(--orange);opacity:0.12;bottom:-100px;left:30%">
+    <div class="glow" style="width:600px;height:600px;--c:var(--cyan);opacity:0.18;top:-200px;left:-150px"></div>
+    <div class="glow" style="width:500px;height:500px;--c:var(--pink);opacity:0.15;top:100px;right:-150px"></div>
+    <div class="glow" style="width:400px;height:400px;--c:var(--orange);opacity:0.12;bottom:-100px;left:30%">
     </div>
 
     <div class="container hero-grid">
       <div class="hero-left">
-        <div class="reveal hero-badge">
+        <div class="hero-badge">
           <span class="hero-badge-dot"></span>
           <span class="t-mono hero-badge-text" data-i18n="badge_official">{{t:badge_official}}</span>
         </div>
 
-        <h1 class="t-display hero-title reveal" id="hero-title" style="transition-delay:100ms">{{HERO_TITLE}}</h1>
+        <h1 class="t-display hero-title" id="hero-title">{{HERO_TITLE}}</h1>
 
-        <p class="t-body-lg hero-sub reveal" data-i18n="hero_sub" style="transition-delay:200ms">{{t:hero_sub}}</p>
+        <p class="t-body-lg hero-sub" data-i18n="hero_sub">{{t:hero_sub}}</p>
 
-        <div class="hero-ctas reveal" style="transition-delay:300ms;flex-direction:column;align-items:flex-start">
+        <div class="hero-ctas">
           <a href="{{APPLY_URL}}"
-            data-apply-link target="_top" class="btn btn-cyan btn-lg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle">
+            data-apply-link target="_top" class="btn btn-main btn-lg">
+            <svg class="tt-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z" />
             </svg>
-            <span data-i18n="apply_btn">{{t:apply_btn}}</span>
+            <span data-i18n="apply_btn">{{t:apply_btn}}</span>{{ARROW}}
           </a>
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:4px">
-            <span style="color:var(--ink-3);font-size:14px" data-i18n="questions_label">{{t:questions_label}}</span>
-            <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost"
-              style="padding:9px 16px;font-size:14px">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
-                style="vertical-align:middle;margin-right:4px">
+          <div class="ask-row">
+            <span class="ask-label" data-i18n="questions_label">{{t:questions_label}}</span>
+            <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-wa">
+              <svg class="wa-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>WhatsApp
@@ -139,7 +138,7 @@
           </div>
         </div>
 
-        <div class="hero-meta reveal" id="hero-free" style="transition-delay:400ms">{{HERO_FREE}}</div>
+        <div class="hero-meta" id="hero-free">{{HERO_FREE}}</div>
       </div>
 
       <!-- Phone mockup -->
@@ -189,7 +188,7 @@
 
   <!-- ═══════ PERKS ═══════ -->
   <section id="perks">
-    <div class="glow" style="width:500px;height:500px;background:var(--cyan);opacity:0.08;top:100px;left:-100px"></div>
+    <div class="glow" style="width:500px;height:500px;--c:var(--cyan);opacity:0.08;top:100px;left:-100px"></div>
     <div class="container" style="position:relative;z-index:2">
       <div class="t-eyebrow reveal" style="margin-bottom:14px">// 01 / <span
           data-i18n="nav_perks">{{t:nav_perks}}</span>
@@ -214,7 +213,7 @@
 
   <!-- ═══════ PRIZES ═══════ -->
   <section id="prizes">
-    <div class="glow" style="width:400px;height:400px;background:var(--orange);opacity:0.1;top:200px;right:-100px">
+    <div class="glow" style="width:400px;height:400px;--c:var(--orange);opacity:0.1;top:200px;right:-100px">
     </div>
     <div class="container" style="position:relative;z-index:2">
       <div class="t-eyebrow reveal" style="margin-bottom:14px">// 03 / <span
@@ -235,24 +234,24 @@
         data-i18n="proof_title">{{t:proof_title}}</h2>
 
       <div class="stats-row reveal" style="transition-delay:200ms">
-        <div class="stat-block">
-          <div class="stat-value" style="color:var(--cyan);text-shadow:0 0 40px rgba(0,229,255,0.4)">
+        <div class="stat-block" style="--accent:var(--cyan)">
+          <div class="stat-value">
             <span data-counter="500" data-suffix="+">500+</span>
           </div>
           <div class="stat-label" data-stat-label="streamers">{{STAT_STREAMERS}}</div>
         </div>
-        <div class="stat-block">
-          <div class="stat-value" style="color:var(--pink);text-shadow:0 0 40px rgba(255,46,126,0.4)">
+        <div class="stat-block" style="--accent:var(--pink)">
+          <div class="stat-value">
             <span data-counter="2" data-suffix=" yr">2 yr</span>
           </div>
           <div class="stat-label" data-stat-label="years">{{STAT_YEARS}}</div>
         </div>
-        <div class="stat-block">
-          <div class="stat-value" style="color:var(--orange);text-shadow:0 0 40px rgba(255,138,61,0.4)">0%</div>
+        <div class="stat-block" style="--accent:var(--orange)">
+          <div class="stat-value">0%</div>
           <div class="stat-label" data-stat-label="commission">{{STAT_COMMISSION}}</div>
         </div>
-        <div class="stat-block">
-          <div class="stat-value" style="color:var(--yellow);text-shadow:0 0 40px rgba(255,209,102,0.4)">
+        <div class="stat-block" style="--accent:var(--yellow)">
+          <div class="stat-value">
             <span data-counter="24" data-suffix="/7">24/7</span>
           </div>
           <div class="stat-label" data-stat-label="support">{{STAT_SUPPORT}}</div>
@@ -276,7 +275,7 @@
   <!-- ═══════ FINAL CTA ═══════ -->
   <section style="padding-bottom:120px;position:relative">
     <div class="glow"
-      style="width:600px;height:600px;background:var(--pink);opacity:0.15;top:0;left:50%;transform:translateX(-50%)">
+      style="width:600px;height:600px;--c:var(--pink);opacity:0.15;top:0;left:50%;transform:translateX(-50%)">
     </div>
     <div class="container" style="position:relative;z-index:2">
       <div class="final-cta-card">
@@ -289,19 +288,17 @@
         <div class="reveal"
           style="display:flex;flex-direction:column;align-items:center;gap:16px;transition-delay:200ms">
           <a href="{{APPLY_URL}}"
-            data-apply-link target="_top" class="btn btn-cyan btn-lg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle">
+            data-apply-link target="_top" class="btn btn-main btn-lg">
+            <svg class="tt-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z" />
             </svg>
-            <span data-i18n="apply_btn">{{t:apply_btn}}</span>
+            <span data-i18n="apply_btn">{{t:apply_btn}}</span>{{ARROW}}
           </a>
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center">
-            <span style="color:var(--ink-3);font-size:14px" data-i18n="questions_label">{{t:questions_label}}</span>
-            <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost"
-              style="padding:10px 18px;font-size:14px">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
-                style="vertical-align:middle;margin-right:4px">
+          <div class="ask-row ask-row-center">
+            <span class="ask-label" data-i18n="questions_label">{{t:questions_label}}</span>
+            <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-wa">
+              <svg class="wa-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>WhatsApp
@@ -330,12 +327,12 @@
   <!-- ═══════ STICKY CTA (mobile) ═══════ -->
   <div class="sticky-cta">
     <a href="{{APPLY_URL}}"
-      data-apply-link target="_top" class="btn btn-cyan" style="flex:2"><svg width="16" height="16" viewBox="0 0 24 24"
-        fill="currentColor" style="vertical-align:middle;margin-right:4px">
+      data-apply-link target="_top" class="btn btn-main btn-main-sm" style="flex:2"><svg class="tt-icon" width="16" height="16" viewBox="0 0 24 24"
+        fill="currentColor" aria-hidden="true">
         <path
           d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z" />
       </svg><span data-i18n="apply_btn">{{t:apply_btn}}</span></a>
-    <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost"><svg width="16" height="16"
+    <a href="{{WA_URL}}" data-wa-link target="_blank" rel="noreferrer" class="btn btn-wa"><svg width="16" height="16"
         viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle">
         <path
           d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />

@@ -53,12 +53,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Armenian:wght@400;500;600;700;800&family=Noto+Sans+Georgian:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=d12eda78">
+  <link rel="stylesheet" href="../styles.css?v=951a4a6f">
   <noscript>
     <style>
       .reveal { opacity: 1 !important; transform: none !important; }
+      .ico * { stroke-dashoffset: 0 !important; }
     </style>
   </noscript>
 
@@ -355,7 +356,7 @@
           <div class="lang-popup" id="lang-popup"><a class="lang-option" href="/" hreflang="ru" data-lang="ru"><span class="lang-option-code">RU</span><span class="lang-option-name">Русский</span></a><a class="lang-option" href="/en/" hreflang="en" data-lang="en"><span class="lang-option-code">EN</span><span class="lang-option-name">English</span></a><a class="lang-option" href="/kk/" hreflang="kk" data-lang="kz"><span class="lang-option-code">KZ</span><span class="lang-option-name">Қазақ</span></a><a class="lang-option active" href="/uz/" hreflang="uz" aria-current="true" data-lang="uz"><span class="lang-option-code">UZ</span><span class="lang-option-name">O'zbek</span></a><a class="lang-option" href="/ky/" hreflang="ky" data-lang="kg"><span class="lang-option-code">KG</span><span class="lang-option-name">Кыргыз</span></a><a class="lang-option" href="/az/" hreflang="az" data-lang="az"><span class="lang-option-code">AZ</span><span class="lang-option-name">Azərbaycan</span></a><a class="lang-option" href="/ka/" hreflang="ka" data-lang="ka"><span class="lang-option-code">KA</span><span class="lang-option-name">ქართული</span></a><a class="lang-option" href="/hy/" hreflang="hy" data-lang="hy"><span class="lang-option-code">HY</span><span class="lang-option-name">Հայերեն</span></a><a class="lang-option" href="/tg/" hreflang="tg" data-lang="tg"><span class="lang-option-code">TG</span><span class="lang-option-name">Тоҷикӣ</span></a><a class="lang-option" href="/tk/" hreflang="tk" data-lang="tk"><span class="lang-option-code">TK</span><span class="lang-option-name">Türkmen</span></a></div>
         </div>
         <a href="https://www.tiktok.com/t/ZSqUprxKh/"
-          data-apply-link target="_top" class="btn btn-cyan nav-cta-desktop" data-i18n="apply_btn">Ariza topshirish</a>
+          data-apply-link target="_top" class="btn btn-main btn-main-sm nav-cta-desktop" data-i18n="apply_btn">Ariza topshirish</a>
         <button class="menu-btn" id="menu-btn" aria-label="menu">≡</button>
       </div>
     </div>
@@ -367,12 +368,12 @@
       <a href="#faq" data-i18n="nav_faq">Savollar</a>
       <div class="mobile-menu-btns">
         <a href="https://www.tiktok.com/t/ZSqUprxKh/"
-          data-apply-link target="_top" class="btn btn-cyan" data-i18n="apply_btn">Ariza topshirish</a>
+          data-apply-link target="_top" class="btn btn-main" data-i18n="apply_btn">Ariza topshirish</a>
       </div>
-      <div style="display:flex;gap:8px;padding:0 20px 16px;align-items:center">
+      <div style="display:flex;gap:10px;padding:0 0 4px;align-items:center">
         <span style="color:var(--ink-3);font-size:13px;white-space:nowrap"
           data-i18n="questions_label">Savollar bormi?</span>
-        <a href="https://wa.me/message/WUIBSOCSSUKEG1" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost"
+        <a href="https://wa.me/message/WUIBSOCSSUKEG1" data-wa-link target="_blank" rel="noreferrer" class="btn btn-wa"
           style="flex:1;padding:8px 12px;font-size:13px">WhatsApp</a>
       </div>
     </div>
@@ -381,37 +382,35 @@
   <!-- ═══════ HERO ═══════ -->
   <div id="top"></div>
   <section id="hero">
-    <div class="glow" style="width:600px;height:600px;background:var(--cyan);opacity:0.18;top:-200px;left:-150px"></div>
-    <div class="glow" style="width:500px;height:500px;background:var(--pink);opacity:0.15;top:100px;right:-150px"></div>
-    <div class="glow" style="width:400px;height:400px;background:var(--orange);opacity:0.12;bottom:-100px;left:30%">
+    <div class="glow" style="width:600px;height:600px;--c:var(--cyan);opacity:0.18;top:-200px;left:-150px"></div>
+    <div class="glow" style="width:500px;height:500px;--c:var(--pink);opacity:0.15;top:100px;right:-150px"></div>
+    <div class="glow" style="width:400px;height:400px;--c:var(--orange);opacity:0.12;bottom:-100px;left:30%">
     </div>
 
     <div class="container hero-grid">
       <div class="hero-left">
-        <div class="reveal hero-badge">
+        <div class="hero-badge">
           <span class="hero-badge-dot"></span>
           <span class="t-mono hero-badge-text" data-i18n="badge_official">TikTok rasmiy agentligi</span>
         </div>
 
-        <h1 class="t-display hero-title reveal" id="hero-title" style="transition-delay:100ms"><span><span class="tiktok-logo">TikTok</span>da striming,</span><br><span class="gradient-text">yoningizdagilar<br>bilan o'sing</span></h1>
+        <h1 class="t-display hero-title" id="hero-title"><span><span class="tiktok-logo">TikTok</span>da striming,</span><br><span class="gradient-text">yoningizdagilar<br>bilan o'sing</span></h1>
 
-        <p class="t-body-lg hero-sub reveal" data-i18n="hero_sub" style="transition-delay:200ms">Kosta Media strimchilarga ko'proq sovg'a topishga, tezroq o'sishga va muammolarda yolg'iz qolmaslikka yordam beradi.</p>
+        <p class="t-body-lg hero-sub" data-i18n="hero_sub">Kosta Media strimchilarga ko'proq sovg'a topishga, tezroq o'sishga va muammolarda yolg'iz qolmaslikka yordam beradi.</p>
 
-        <div class="hero-ctas reveal" style="transition-delay:300ms;flex-direction:column;align-items:flex-start">
+        <div class="hero-ctas">
           <a href="https://www.tiktok.com/t/ZSqUprxKh/"
-            data-apply-link target="_top" class="btn btn-cyan btn-lg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle">
+            data-apply-link target="_top" class="btn btn-main btn-lg">
+            <svg class="tt-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z" />
             </svg>
-            <span data-i18n="apply_btn">Ariza topshirish</span>
+            <span data-i18n="apply_btn">Ariza topshirish</span><svg class="ico btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M5 12h14"/><path pathLength="1" d="m12 5 7 7-7 7"/></svg>
           </a>
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:4px">
-            <span style="color:var(--ink-3);font-size:14px" data-i18n="questions_label">Savollar bormi?</span>
-            <a href="https://wa.me/message/WUIBSOCSSUKEG1" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost"
-              style="padding:9px 16px;font-size:14px">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
-                style="vertical-align:middle;margin-right:4px">
+          <div class="ask-row">
+            <span class="ask-label" data-i18n="questions_label">Savollar bormi?</span>
+            <a href="https://wa.me/message/WUIBSOCSSUKEG1" data-wa-link target="_blank" rel="noreferrer" class="btn btn-wa">
+              <svg class="wa-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>WhatsApp
@@ -419,7 +418,7 @@
           </div>
         </div>
 
-        <div class="hero-meta reveal" id="hero-free" style="transition-delay:400ms"><span class="accent">0%</span> <span>·</span> <span>strimchi uchun bepul</span> <span>·</span> <span class="note">Vakil emas — shartnoma bo'yicha rasmiy hamkor</span></div>
+        <div class="hero-meta" id="hero-free"><span class="accent">0%</span> <span>·</span> <span>strimchi uchun bepul</span> <span>·</span> <span class="note">Vakil emas — shartnoma bo'yicha rasmiy hamkor</span></div>
       </div>
 
       <!-- Phone mockup -->
@@ -464,12 +463,12 @@
 
   <!-- ═══════ MARQUEE ═══════ -->
   <div class="ticker-wrap">
-    <div class="ticker" id="ticker"><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">500+ strimchi</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">Bozorda 2 yil</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">0% komissiya</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">24/7 qo'llab-quvvatlash</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">TikTok Live</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">CCA region</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">500+ strimchi</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">Bozorda 2 yil</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">0% komissiya</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">24/7 qo'llab-quvvatlash</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">TikTok Live</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">CCA region</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">500+ strimchi</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">Bozorda 2 yil</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">0% komissiya</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">24/7 qo'llab-quvvatlash</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">TikTok Live</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">CCA region</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">500+ strimchi</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">Bozorda 2 yil</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">0% komissiya</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">24/7 qo'llab-quvvatlash</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">TikTok Live</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--ink-2)">CCA region</span><span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;color:var(--cyan)">·</span></div>
+    <div class="ticker" id="ticker"><span class="ticker-item">500+ strimchi</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">Bozorda 2 yil</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">0% komissiya</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">24/7 qo'llab-quvvatlash</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">TikTok Live</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">CCA region</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">500+ strimchi</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">Bozorda 2 yil</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">0% komissiya</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">24/7 qo'llab-quvvatlash</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">TikTok Live</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">CCA region</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">500+ strimchi</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">Bozorda 2 yil</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">0% komissiya</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">24/7 qo'llab-quvvatlash</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">TikTok Live</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">CCA region</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">500+ strimchi</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">Bozorda 2 yil</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">0% komissiya</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">24/7 qo'llab-quvvatlash</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">TikTok Live</span><span class="ticker-item ticker-dot">·</span><span class="ticker-item">CCA region</span><span class="ticker-item ticker-dot">·</span></div>
   </div>
 
   <!-- ═══════ PERKS ═══════ -->
   <section id="perks">
-    <div class="glow" style="width:500px;height:500px;background:var(--cyan);opacity:0.08;top:100px;left:-100px"></div>
+    <div class="glow" style="width:500px;height:500px;--c:var(--cyan);opacity:0.08;top:100px;left:-100px"></div>
     <div class="container" style="position:relative;z-index:2">
       <div class="t-eyebrow reveal" style="margin-bottom:14px">// 01 / <span
           data-i18n="nav_perks">Afzalliklar</span>
@@ -478,12 +477,12 @@
         data-i18n="perks_title">Siz olasiz</h2>
       <p class="t-body-lg reveal" style="margin:0 0 48px;max-width:540px;transition-delay:200ms"
         data-i18n="perks_sub">Quruq va'dalar emas, haqiqiy yordam</p>
-      <div class="perks-grid" id="perks-grid"><div class="card perk-card reveal" style="transition-delay:0ms"><div class="perk-accent-line" style="background:var(--pink)"></div><div class="perk-icon" style="color:var(--pink);text-shadow:0 0 30px var(--pink)80">🎁</div><h3 class="t-h3" style="margin:0 0 10px">Live'da ko'proq sovg'a</h3><p class="t-body" style="margin:0;font-size:14px">Efirlaringizni koʻrib chiqamiz va tomoshabin qayerda ketayotganini aniqlaymiz: strim boshlanishi, temp, mavzular, chat bilan ishlash. Ushlab turish yaxshilansa, sovgʻalar koʻpayadi.</p></div>
-<div class="card perk-card reveal span-2" style="transition-delay:80ms"><div class="perk-accent-line" style="background:var(--cyan)"></div><div class="perk-icon big" style="color:var(--cyan);text-shadow:0 0 30px var(--cyan)80">0%</div><h3 class="t-h3" style="margin:0 0 10px">0% komissiya</h3><p class="t-body" style="margin:0;font-size:14px">Agentlikka strimchilarni jalb qilgani va rivojlantirgani uchun TikTok toʻlaydi. Shuning uchun sovgʻalaringiz toʻliq sizniki boʻlib qoladi: foiz ham, badal ham, yashirin shart ham yoʻq.</p></div>
-<div class="card perk-card reveal" style="transition-delay:160ms"><div class="perk-accent-line" style="background:var(--orange)"></div><div class="perk-icon" style="color:var(--orange);text-shadow:0 0 30px var(--orange)80">🛡</div><h3 class="t-h3" style="margin:0 0 10px">Ban himoyasi</h3><p class="t-body" style="margin:0;font-size:14px">Menejer cheklov turini aniqlaydi, akkaunt holati boʻyicha sababni koʻrib chiqadi va apellyatsiya tayyorlaydi. Qarorni TikTok qabul qiladi, lekin murojaatni yolgʻiz oʻzingiz yozmaysiz.</p></div>
-<div class="card perk-card reveal" style="transition-delay:240ms"><div class="perk-accent-line" style="background:var(--pink)"></div><div class="perk-icon" style="color:var(--pink);text-shadow:0 0 30px var(--pink)80">👥</div><h3 class="t-h3" style="margin:0 0 10px">Strimchilar jamoasi</h3><p class="t-body" style="margin:0;font-size:14px">Chatlar, kollablar, tajriba almashuvi. Endi yolg'iz strim qilmaysiz.</p></div>
-<div class="card perk-card reveal" style="transition-delay:320ms"><div class="perk-accent-line" style="background:var(--yellow)"></div><div class="perk-icon" style="color:var(--yellow);text-shadow:0 0 30px var(--yellow)80">🏆</div><h3 class="t-h3" style="margin:0 0 10px">Yutuqlar uchun sovrinlar</h3><p class="t-body" style="margin:0;font-size:14px">Yangi darajalar va katta strimlar uchun haqiqiy sovg'alar va bonuslar beramiz.</p></div>
-<div class="card perk-card reveal" style="transition-delay:400ms"><div class="perk-accent-line" style="background:var(--cyan)"></div><div class="perk-icon" style="color:var(--cyan);text-shadow:0 0 30px var(--cyan)80">💬</div><h3 class="t-h3" style="margin:0 0 10px">Shaxsiy menejer</h3><p class="t-body" style="margin:0;font-size:14px">WhatsApp'da bitta odam: kanalingizni biladi, efir statistikasini kuzatadi va biror narsa notoʻgʻri ketsa aralashadi.</p></div></div>
+      <div class="perks-grid" id="perks-grid"><div class="card perk-card reveal" style="--accent:var(--pink);transition-delay:0ms"><div class="perk-accent-line"></div><div class="perk-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="1" x="3" y="8" width="18" height="4" rx="1"/><path pathLength="1" d="M12 8v13"/><path pathLength="1" d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path pathLength="1" d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg></div><h3 class="t-h3 perk-title">Live'da ko'proq sovg'a</h3><p class="t-body perk-text">Efirlaringizni koʻrib chiqamiz va tomoshabin qayerda ketayotganini aniqlaymiz: strim boshlanishi, temp, mavzular, chat bilan ishlash. Ushlab turish yaxshilansa, sovgʻalar koʻpayadi.</p></div>
+<div class="card perk-card reveal span-2" style="--accent:var(--cyan);transition-delay:80ms"><div class="perk-accent-line"></div><div class="perk-icon big">0%</div><h3 class="t-h3 perk-title">0% komissiya</h3><p class="t-body perk-text">Agentlikka strimchilarni jalb qilgani va rivojlantirgani uchun TikTok toʻlaydi. Shuning uchun sovgʻalaringiz toʻliq sizniki boʻlib qoladi: foiz ham, badal ham, yashirin shart ham yoʻq.</p></div>
+<div class="card perk-card reveal" style="--accent:var(--orange);transition-delay:160ms"><div class="perk-accent-line"></div><div class="perk-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path pathLength="1" d="m9 12 2 2 4-4"/></svg></div><h3 class="t-h3 perk-title">Ban himoyasi</h3><p class="t-body perk-text">Menejer cheklov turini aniqlaydi, akkaunt holati boʻyicha sababni koʻrib chiqadi va apellyatsiya tayyorlaydi. Qarorni TikTok qabul qiladi, lekin murojaatni yolgʻiz oʻzingiz yozmaysiz.</p></div>
+<div class="card perk-card reveal" style="--accent:var(--pink);transition-delay:240ms"><div class="perk-accent-line"></div><div class="perk-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle pathLength="1" cx="9" cy="7" r="4"/><path pathLength="1" d="M22 21v-2a4 4 0 0 0-3-3.87"/><path pathLength="1" d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3 class="t-h3 perk-title">Strimchilar jamoasi</h3><p class="t-body perk-text">Chatlar, kollablar, tajriba almashuvi. Endi yolg'iz strim qilmaysiz.</p></div>
+<div class="card perk-card reveal" style="--accent:var(--yellow);transition-delay:320ms"><div class="perk-accent-line"></div><div class="perk-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path pathLength="1" d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path pathLength="1" d="M4 22h16"/><path pathLength="1" d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path pathLength="1" d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path pathLength="1" d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div><h3 class="t-h3 perk-title">Yutuqlar uchun sovrinlar</h3><p class="t-body perk-text">Yangi darajalar va katta strimlar uchun haqiqiy sovg'alar va bonuslar beramiz.</p></div>
+<div class="card perk-card reveal" style="--accent:var(--cyan);transition-delay:400ms"><div class="perk-accent-line"></div><div class="perk-icon"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path pathLength="1" d="M8 12h.01"/><path pathLength="1" d="M12 12h.01"/><path pathLength="1" d="M16 12h.01"/></svg></div><h3 class="t-h3 perk-title">Shaxsiy menejer</h3><p class="t-body perk-text">WhatsApp'da bitta odam: kanalingizni biladi, efir statistikasini kuzatadi va biror narsa notoʻgʻri ketsa aralashadi.</p></div></div>
     </div>
   </section>
 
@@ -493,16 +492,16 @@
       <div class="t-eyebrow reveal" style="margin-bottom:14px">// 02 / <span data-i18n="nav_how">Qanday ishlaydi</span>
       </div>
       <h2 class="t-h1 reveal" style="margin:0 0 60px;transition-delay:100ms" data-i18n="how_title">Qanday ishlaydi</h2>
-      <div class="how-grid" id="how-grid"><div class="card how-step reveal" style="transition-delay:0ms"><div class="how-number" style="border:1px solid var(--cyan);color:var(--cyan);box-shadow:0 0 24px var(--cyan)40">01</div><div class="how-spacer"></div><h3 class="t-h3" style="margin:0 0 10px">Ariza yuboring</h3><p class="t-body" style="margin:0;font-size:14px">WhatsAppda yozing — qisqa suhbat, 50 ta savol emas.</p></div>
-<div class="card how-step reveal" style="transition-delay:100ms"><div class="how-number" style="border:1px solid var(--pink);color:var(--pink);box-shadow:0 0 24px var(--pink)40">02</div><div class="how-spacer"></div><h3 class="t-h3" style="margin:0 0 10px">Tanishamiz</h3><p class="t-body" style="margin:0;font-size:14px">TikTokingizni ko'ramiz, maqsadlar va shartlarni muhokama qilamiz. Qaror sizniki.</p></div>
-<div class="card how-step reveal" style="transition-delay:200ms"><div class="how-number" style="border:1px solid var(--orange);color:var(--orange);box-shadow:0 0 24px var(--orange)40">03</div><div class="how-spacer"></div><h3 class="t-h3" style="margin:0 0 10px">Agentlikka qo'shilish</h3><p class="t-body" style="margin:0;font-size:14px">TikTok orqali rasmiy imzo. Bepul, komissiyasiz.</p></div>
-<div class="card how-step reveal" style="transition-delay:300ms"><div class="how-number" style="border:1px solid var(--yellow);color:var(--yellow);box-shadow:0 0 24px var(--yellow)40">04</div><div class="how-spacer"></div><h3 class="t-h3" style="margin:0 0 10px">Birga o'samiz</h3><p class="t-body" style="margin:0;font-size:14px">Strategiya, qo'llab-quvvatlash, sovrinlar va jamoa — har kuni.</p></div></div>
+      <div class="how-grid" id="how-grid"><div class="card how-step reveal" style="--accent:var(--cyan);transition-delay:0ms"><div class="how-number">01</div><h3 class="t-h3 how-title">Ariza yuboring</h3><p class="t-body how-text">WhatsAppda yozing — qisqa suhbat, 50 ta savol emas.</p></div>
+<div class="card how-step reveal" style="--accent:var(--pink);transition-delay:100ms"><div class="how-number">02</div><h3 class="t-h3 how-title">Tanishamiz</h3><p class="t-body how-text">TikTokingizni ko'ramiz, maqsadlar va shartlarni muhokama qilamiz. Qaror sizniki.</p></div>
+<div class="card how-step reveal" style="--accent:var(--orange);transition-delay:200ms"><div class="how-number">03</div><h3 class="t-h3 how-title">Agentlikka qo'shilish</h3><p class="t-body how-text">TikTok orqali rasmiy imzo. Bepul, komissiyasiz.</p></div>
+<div class="card how-step reveal" style="--accent:var(--yellow);transition-delay:300ms"><div class="how-number">04</div><h3 class="t-h3 how-title">Birga o'samiz</h3><p class="t-body how-text">Strategiya, qo'llab-quvvatlash, sovrinlar va jamoa — har kuni.</p></div></div>
     </div>
   </section>
 
   <!-- ═══════ PRIZES ═══════ -->
   <section id="prizes">
-    <div class="glow" style="width:400px;height:400px;background:var(--orange);opacity:0.1;top:200px;right:-100px">
+    <div class="glow" style="width:400px;height:400px;--c:var(--orange);opacity:0.1;top:200px;right:-100px">
     </div>
     <div class="container" style="position:relative;z-index:2">
       <div class="t-eyebrow reveal" style="margin-bottom:14px">// 03 / <span
@@ -511,9 +510,9 @@
         data-i18n="prizes_title">O'sish uchun sovrinlar</h2>
       <p class="t-body-lg reveal" style="margin:0 0 48px;max-width:600px;transition-delay:200ms"
         data-i18n="prizes_sub">Maqsadga yetasiz — sovg'a olasiz. Hech qanday ilinjsiz.</p>
-      <div class="prizes-grid" id="prizes-grid"><div class="card prize-card reveal" style="transition-delay:0ms;background:linear-gradient(180deg, var(--pink)10, transparent 60%)"><div class="prize-glyph" style="filter:drop-shadow(0 0 24px var(--pink))">🚀</div><div class="t-mono" style="color:var(--pink);margin-bottom:8px">TIER 1</div><h3 class="t-h3" style="margin:0 0 12px">Barqaror strimlar</h3><div class="prize-tier">🎁 sovg'a</div></div>
-<div class="card prize-card reveal" style="transition-delay:80ms;background:linear-gradient(180deg, var(--orange)10, transparent 60%)"><div class="prize-glyph" style="filter:drop-shadow(0 0 24px var(--orange))">💎</div><div class="t-mono" style="color:var(--orange);margin-bottom:8px">TIER 2</div><h3 class="t-h3" style="margin:0 0 12px">Topga o'sish</h3><div class="prize-tier">🎁 sovg'a</div></div>
-<div class="card prize-card reveal" style="transition-delay:160ms;background:linear-gradient(180deg, var(--yellow)10, transparent 60%)"><div class="prize-glyph" style="filter:drop-shadow(0 0 24px var(--yellow))">👑</div><div class="t-mono" style="color:var(--yellow);margin-bottom:8px">TIER 3</div><h3 class="t-h3" style="margin:0 0 12px">Top daraja</h3><div class="prize-tier">🎁 sovg'a</div></div></div>
+      <div class="prizes-grid" id="prizes-grid"><div class="card prize-card reveal" style="--accent:var(--pink);transition-delay:0ms"><div class="prize-glyph"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path pathLength="1" d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path pathLength="1" d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path pathLength="1" d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div><div class="t-mono prize-level">TIER 1</div><h3 class="t-h3 prize-title">Barqaror strimlar</h3><div class="prize-tier"><svg class="ico ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="1" x="3" y="8" width="18" height="4" rx="1"/><path pathLength="1" d="M12 8v13"/><path pathLength="1" d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path pathLength="1" d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg> sovg'a</div></div>
+<div class="card prize-card reveal" style="--accent:var(--orange);transition-delay:80ms"><div class="prize-glyph"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M6 3h12l4 6-10 13L2 9Z"/><path pathLength="1" d="M11 3 8 9l4 13 4-13-3-6"/><path pathLength="1" d="M2 9h20"/></svg></div><div class="t-mono prize-level">TIER 2</div><h3 class="t-h3 prize-title">Topga o'sish</h3><div class="prize-tier"><svg class="ico ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="1" x="3" y="8" width="18" height="4" rx="1"/><path pathLength="1" d="M12 8v13"/><path pathLength="1" d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path pathLength="1" d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg> sovg'a</div></div>
+<div class="card prize-card reveal" style="--accent:var(--yellow);transition-delay:160ms"><div class="prize-glyph"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path pathLength="1" d="M5 21h14"/></svg></div><div class="t-mono prize-level">TIER 3</div><h3 class="t-h3 prize-title">Top daraja</h3><div class="prize-tier"><svg class="ico ico-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect pathLength="1" x="3" y="8" width="18" height="4" rx="1"/><path pathLength="1" d="M12 8v13"/><path pathLength="1" d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path pathLength="1" d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg> sovg'a</div></div></div>
     </div>
   </section>
 
@@ -525,33 +524,33 @@
         data-i18n="proof_title">Strimchilar biz haqimizda</h2>
 
       <div class="stats-row reveal" style="transition-delay:200ms">
-        <div class="stat-block">
-          <div class="stat-value" style="color:var(--cyan);text-shadow:0 0 40px rgba(0,229,255,0.4)">
+        <div class="stat-block" style="--accent:var(--cyan)">
+          <div class="stat-value">
             <span data-counter="500" data-suffix="+">500+</span>
           </div>
           <div class="stat-label" data-stat-label="streamers">strimchi</div>
         </div>
-        <div class="stat-block">
-          <div class="stat-value" style="color:var(--pink);text-shadow:0 0 40px rgba(255,46,126,0.4)">
+        <div class="stat-block" style="--accent:var(--pink)">
+          <div class="stat-value">
             <span data-counter="2" data-suffix=" yr">2 yr</span>
           </div>
           <div class="stat-label" data-stat-label="years">2 yil</div>
         </div>
-        <div class="stat-block">
-          <div class="stat-value" style="color:var(--orange);text-shadow:0 0 40px rgba(255,138,61,0.4)">0%</div>
+        <div class="stat-block" style="--accent:var(--orange)">
+          <div class="stat-value">0%</div>
           <div class="stat-label" data-stat-label="commission">0% komissiya</div>
         </div>
-        <div class="stat-block">
-          <div class="stat-value" style="color:var(--yellow);text-shadow:0 0 40px rgba(255,209,102,0.4)">
+        <div class="stat-block" style="--accent:var(--yellow)">
+          <div class="stat-value">
             <span data-counter="24" data-suffix="/7">24/7</span>
           </div>
           <div class="stat-label" data-stat-label="support">qo'llab-quvvatlash</div>
         </div>
       </div>
 
-      <div class="quotes-grid" id="quotes-grid"><div class="card reveal" style="transition-delay:0ms"><div class="quote-mark" style="color:var(--cyan)">"</div><p class="quote-text">Kosta Media bilan 3 oyda donatlarim 4 marta o'sdi. Yigitlar doim aloqada.</p><div class="quote-author"><div class="quote-avatar" style="background:linear-gradient(135deg,var(--cyan),var(--cyan)80)"></div><div><div class="quote-name">@maria_live</div><div class="quote-role">124k followers</div></div></div></div>
-<div class="card reveal" style="transition-delay:100ms"><div class="quote-mark" style="color:var(--pink)">"</div><p class="quote-text">Sababsiz banlanganimda — akkauntimni 2 kunda qaytarishdi.</p><div class="quote-author"><div class="quote-avatar" style="background:linear-gradient(135deg,var(--pink),var(--pink)80)"></div><div><div class="quote-name">@aibek</div><div class="quote-role">38k followers</div></div></div></div>
-<div class="card reveal" style="transition-delay:200ms"><div class="quote-mark" style="color:var(--orange)">"</div><p class="quote-text">Agentlik = komissiya deb o'ylardim. Bu yerda haqiqatan 0%.</p><div class="quote-author"><div class="quote-avatar" style="background:linear-gradient(135deg,var(--orange),var(--orange)80)"></div><div><div class="quote-name">@nargiza</div><div class="quote-role">92k followers</div></div></div></div></div>
+      <div class="quotes-grid" id="quotes-grid"><div class="card quote-card reveal" style="--accent:var(--cyan);transition-delay:0ms"><div class="quote-mark"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path pathLength="1" d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div><p class="quote-text">Kosta Media bilan 3 oyda donatlarim 4 marta o'sdi. Yigitlar doim aloqada.</p><div class="quote-author"><div class="quote-avatar"></div><div><div class="quote-name">@maria_live</div><div class="quote-role">124k followers</div></div></div></div>
+<div class="card quote-card reveal" style="--accent:var(--pink);transition-delay:100ms"><div class="quote-mark"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path pathLength="1" d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div><p class="quote-text">Sababsiz banlanganimda — akkauntimni 2 kunda qaytarishdi.</p><div class="quote-author"><div class="quote-avatar"></div><div><div class="quote-name">@aibek</div><div class="quote-role">38k followers</div></div></div></div>
+<div class="card quote-card reveal" style="--accent:var(--orange);transition-delay:200ms"><div class="quote-mark"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path pathLength="1" d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/></svg></div><p class="quote-text">Agentlik = komissiya deb o'ylardim. Bu yerda haqiqatan 0%.</p><div class="quote-author"><div class="quote-avatar"></div><div><div class="quote-name">@nargiza</div><div class="quote-role">92k followers</div></div></div></div></div>
     </div>
   </section>
 
@@ -561,25 +560,25 @@
       <div class="t-eyebrow reveal" style="margin-bottom:14px">// 05 / <span data-i18n="nav_faq">Savollar</span>
       </div>
       <h2 class="t-h1 reveal" style="margin:0 0 48px;transition-delay:100ms" data-i18n="faq_title">Tez-tez so'raladigan savollar</h2>
-      <div class="faq-list" id="faq-list"><button class="faq-item reveal open" style="transition-delay:0ms"><span class="faq-num">01</span><span class="faq-content"><span class="faq-question">Haqiqatan bepulmi?</span><span class="faq-answer">Ha. Strimchi hech narsa to'lamaydi. Bizga TikTok to'laydi.</span></span><span class="faq-toggle">+</span></button>
-<button class="faq-item reveal" style="transition-delay:60ms"><span class="faq-num">02</span><span class="faq-content"><span class="faq-question">Oʻzim efirga chiqa olsam, strimchiga agentlik nima uchun kerak?</span><span class="faq-answer">Mustaqil strim qilish mumkin. Agentlik yolgʻiz strimchida boʻlmagan narsani beradi: TikTok LIVE dasturlari va vositalariga kirish, efirlar tahlili va strategiya, shaxsiy menejer va bloklashda yordam. Tizimsiz efirlar oʻtadi, lekin natija toʻplanmaydi.</span></span><span class="faq-toggle">+</span></button>
-<button class="faq-item reveal" style="transition-delay:120ms"><span class="faq-num">03</span><span class="faq-content"><span class="faq-question">TikTok LIVE strimlarida qancha pul ishlash mumkin?</span><span class="faq-answer">Aniq summani hech kim ayta olmaydi. Daromad tomoshabinlar sovgʻalaridan yigʻiladi va efirga qanchalik tez-tez va uzoq chiqishingizga, mavzuga hamda auditoriya hajmiga bogʻliq. Tafovut juda katta: boshida choʻntak puli, har kuni strim qiladiganlar uchun esa asosiy daromad. Biz aniq summa vaʼda qilmaymiz — sovgʻalar koʻpayishi uchun efirni toʻgʻri qurishga yordam beramiz.</span></span><span class="faq-toggle">+</span></button>
-<button class="faq-item reveal" style="transition-delay:180ms"><span class="faq-num">04</span><span class="faq-content"><span class="faq-question">TikTok'dagi tanga va olmos nima va strimchi pulni qanday oladi?</span><span class="faq-answer">Tomoshabinlar tanga sotib oladi va efir vaqtida ular orqali sovgʻa yuboradi. Sovgʻalar strimchi balansida olmosga aylanadi, olmoslar esa ilovadan siz tanlagan toʻlov usuliga yechib olinadi. Pul TikTok'dan toʻgʻridan-toʻgʻri strimchiga boradi — agentlik uni ushlab turmaydi va undan ulush olmaydi.</span></span><span class="faq-toggle">+</span></button>
-<button class="faq-item reveal" style="transition-delay:240ms"><span class="faq-num">05</span><span class="faq-content"><span class="faq-question">Qaysi mamlakatlar bilan ishlaysiz?</span><span class="faq-answer">Kosta Media Oʻzbekiston, Qozogʻiston, Qirgʻiziston, Tojikiston, Turkmaniston, Ozarbayjon, Armaniston, Gruziya va Mongoliya strimchilari bilan ishlaydi. Ulanish va menejer bilan muloqot sizga qulay tilda boʻladi.</span></span><span class="faq-toggle">+</span></button>
-<button class="faq-item reveal" style="transition-delay:300ms"><span class="faq-num">06</span><span class="faq-content"><span class="faq-question">Akkaunt banlansa yoki efir bloklansa nima qilish kerak?</span><span class="faq-answer">Birinchidan: akkauntni oʻchirmang va yangisini ochmang — bu tiklashni qiyinlashtiradi. Ilovada apellyatsiya yuboring va bloklash skrinshotlarini saqlang. Kosta Media strimchilariga menejer yordam beradi: sababni aniqlaymiz, murojaat tayyorlaymiz va uni agentlik liniyasi orqali olib boramiz — bu oʻzingiz support'ga yozgandan tezroq.</span></span><span class="faq-toggle">+</span></button>
-<button class="faq-item reveal" style="transition-delay:360ms"><span class="faq-num">07</span><span class="faq-content"><span class="faq-question">Qancha obunachi kerak?</span><span class="faq-answer">Qat'iy chegara yo'q. Salohiyat va muntazam strim qilish istagiga qaraymiz.</span></span><span class="faq-toggle">+</span></button>
-<button class="faq-item reveal" style="transition-delay:420ms"><span class="faq-num">08</span><span class="faq-content"><span class="faq-question">Agentlik yangi boshlovchilarga mosmi yoki faqat allaqachon strim qilayotganlargami?</span><span class="faq-answer">Ikkalasiga ham. Yangi boshlovchilarga asosni quramiz: efirni nimadan boshlash, tomoshabinni qanday ushlab turish, birinchi haftalarda nimaga qarash kerak. Allaqachon strim qilayotganlarda esa zaif joylarni topamiz va oʻsishga xalaqit berayotgan boʻshliqlarni yoʻqotamiz.</span></span><span class="faq-toggle">+</span></button>
-<button class="faq-item reveal" style="transition-delay:480ms"><span class="faq-num">09</span><span class="faq-content"><span class="faq-question">Siz TikTok vakillarimisiz?</span><span class="faq-answer">Yo'q. Biz TikTok bilan shartnoma bo'yicha rasmiy hamkor agentligimiz. Bular boshqa rollar.</span></span><span class="faq-toggle">+</span></button>
-<button class="faq-item reveal" style="transition-delay:540ms"><span class="faq-num">10</span><span class="faq-content"><span class="faq-question">Bir vaqtning oʻzida ikkita agentlikda boʻlsa boʻladimi?</span><span class="faq-answer">Yoʻq. Strimchi bir vaqtda faqat bitta TikTok agentligiga ulangan boʻlishi mumkin. Joriysidan chiqib, boshqasiga ulanish mumkin — bizda chiqish erkin, jarimasiz va muddatsiz.</span></span><span class="faq-toggle">+</span></button>
-<button class="faq-item reveal" style="transition-delay:600ms"><span class="faq-num">11</span><span class="faq-content"><span class="faq-question">Agentlikdan chiqib ketsam bo'ladimi?</span><span class="faq-answer">Ha, istalgan vaqtda. Jarima yo'q, qayd yo'q.</span></span><span class="faq-toggle">+</span></button>
-<button class="faq-item reveal" style="transition-delay:660ms"><span class="faq-num">12</span><span class="faq-content"><span class="faq-question">Qaysi tillarda ishlaysiz?</span><span class="faq-answer">Oʻzbek, rus, ingliz, qozoq, qirgʻiz, ozarbayjon, gruzin, arman, tojik va turkman tillarida. Menejerni sizning tilingizga qarab tanlaymiz.</span></span><span class="faq-toggle">+</span></button></div>
+      <div class="faq-list" id="faq-list"><button class="faq-item reveal open" aria-expanded="true" style="transition-delay:0ms"><span class="faq-num">01</span><span class="faq-content"><span class="faq-question">Haqiqatan bepulmi?</span><span class="faq-answer"><span class="faq-answer-inner">Ha. Strimchi hech narsa to'lamaydi. Bizga TikTok to'laydi.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button>
+<button class="faq-item reveal" aria-expanded="false" style="transition-delay:60ms"><span class="faq-num">02</span><span class="faq-content"><span class="faq-question">Oʻzim efirga chiqa olsam, strimchiga agentlik nima uchun kerak?</span><span class="faq-answer"><span class="faq-answer-inner">Mustaqil strim qilish mumkin. Agentlik yolgʻiz strimchida boʻlmagan narsani beradi: TikTok LIVE dasturlari va vositalariga kirish, efirlar tahlili va strategiya, shaxsiy menejer va bloklashda yordam. Tizimsiz efirlar oʻtadi, lekin natija toʻplanmaydi.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button>
+<button class="faq-item reveal" aria-expanded="false" style="transition-delay:120ms"><span class="faq-num">03</span><span class="faq-content"><span class="faq-question">TikTok LIVE strimlarida qancha pul ishlash mumkin?</span><span class="faq-answer"><span class="faq-answer-inner">Aniq summani hech kim ayta olmaydi. Daromad tomoshabinlar sovgʻalaridan yigʻiladi va efirga qanchalik tez-tez va uzoq chiqishingizga, mavzuga hamda auditoriya hajmiga bogʻliq. Tafovut juda katta: boshida choʻntak puli, har kuni strim qiladiganlar uchun esa asosiy daromad. Biz aniq summa vaʼda qilmaymiz — sovgʻalar koʻpayishi uchun efirni toʻgʻri qurishga yordam beramiz.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button>
+<button class="faq-item reveal" aria-expanded="false" style="transition-delay:180ms"><span class="faq-num">04</span><span class="faq-content"><span class="faq-question">TikTok'dagi tanga va olmos nima va strimchi pulni qanday oladi?</span><span class="faq-answer"><span class="faq-answer-inner">Tomoshabinlar tanga sotib oladi va efir vaqtida ular orqali sovgʻa yuboradi. Sovgʻalar strimchi balansida olmosga aylanadi, olmoslar esa ilovadan siz tanlagan toʻlov usuliga yechib olinadi. Pul TikTok'dan toʻgʻridan-toʻgʻri strimchiga boradi — agentlik uni ushlab turmaydi va undan ulush olmaydi.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button>
+<button class="faq-item reveal" aria-expanded="false" style="transition-delay:240ms"><span class="faq-num">05</span><span class="faq-content"><span class="faq-question">Qaysi mamlakatlar bilan ishlaysiz?</span><span class="faq-answer"><span class="faq-answer-inner">Kosta Media Oʻzbekiston, Qozogʻiston, Qirgʻiziston, Tojikiston, Turkmaniston, Ozarbayjon, Armaniston, Gruziya va Mongoliya strimchilari bilan ishlaydi. Ulanish va menejer bilan muloqot sizga qulay tilda boʻladi.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button>
+<button class="faq-item reveal" aria-expanded="false" style="transition-delay:300ms"><span class="faq-num">06</span><span class="faq-content"><span class="faq-question">Akkaunt banlansa yoki efir bloklansa nima qilish kerak?</span><span class="faq-answer"><span class="faq-answer-inner">Birinchidan: akkauntni oʻchirmang va yangisini ochmang — bu tiklashni qiyinlashtiradi. Ilovada apellyatsiya yuboring va bloklash skrinshotlarini saqlang. Kosta Media strimchilariga menejer yordam beradi: sababni aniqlaymiz, murojaat tayyorlaymiz va uni agentlik liniyasi orqali olib boramiz — bu oʻzingiz support'ga yozgandan tezroq.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button>
+<button class="faq-item reveal" aria-expanded="false" style="transition-delay:360ms"><span class="faq-num">07</span><span class="faq-content"><span class="faq-question">Qancha obunachi kerak?</span><span class="faq-answer"><span class="faq-answer-inner">Qat'iy chegara yo'q. Salohiyat va muntazam strim qilish istagiga qaraymiz.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button>
+<button class="faq-item reveal" aria-expanded="false" style="transition-delay:420ms"><span class="faq-num">08</span><span class="faq-content"><span class="faq-question">Agentlik yangi boshlovchilarga mosmi yoki faqat allaqachon strim qilayotganlargami?</span><span class="faq-answer"><span class="faq-answer-inner">Ikkalasiga ham. Yangi boshlovchilarga asosni quramiz: efirni nimadan boshlash, tomoshabinni qanday ushlab turish, birinchi haftalarda nimaga qarash kerak. Allaqachon strim qilayotganlarda esa zaif joylarni topamiz va oʻsishga xalaqit berayotgan boʻshliqlarni yoʻqotamiz.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button>
+<button class="faq-item reveal" aria-expanded="false" style="transition-delay:480ms"><span class="faq-num">09</span><span class="faq-content"><span class="faq-question">Siz TikTok vakillarimisiz?</span><span class="faq-answer"><span class="faq-answer-inner">Yo'q. Biz TikTok bilan shartnoma bo'yicha rasmiy hamkor agentligimiz. Bular boshqa rollar.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button>
+<button class="faq-item reveal" aria-expanded="false" style="transition-delay:540ms"><span class="faq-num">10</span><span class="faq-content"><span class="faq-question">Bir vaqtning oʻzida ikkita agentlikda boʻlsa boʻladimi?</span><span class="faq-answer"><span class="faq-answer-inner">Yoʻq. Strimchi bir vaqtda faqat bitta TikTok agentligiga ulangan boʻlishi mumkin. Joriysidan chiqib, boshqasiga ulanish mumkin — bizda chiqish erkin, jarimasiz va muddatsiz.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button>
+<button class="faq-item reveal" aria-expanded="false" style="transition-delay:600ms"><span class="faq-num">11</span><span class="faq-content"><span class="faq-question">Agentlikdan chiqib ketsam bo'ladimi?</span><span class="faq-answer"><span class="faq-answer-inner">Ha, istalgan vaqtda. Jarima yo'q, qayd yo'q.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button>
+<button class="faq-item reveal" aria-expanded="false" style="transition-delay:660ms"><span class="faq-num">12</span><span class="faq-content"><span class="faq-question">Qaysi tillarda ishlaysiz?</span><span class="faq-answer"><span class="faq-answer-inner">Oʻzbek, rus, ingliz, qozoq, qirgʻiz, ozarbayjon, gruzin, arman, tojik va turkman tillarida. Menejerni sizning tilingizga qarab tanlaymiz.</span></span></span><span class="faq-toggle" aria-hidden="true">+</span></button></div>
     </div>
   </section>
 
   <!-- ═══════ FINAL CTA ═══════ -->
   <section style="padding-bottom:120px;position:relative">
     <div class="glow"
-      style="width:600px;height:600px;background:var(--pink);opacity:0.15;top:0;left:50%;transform:translateX(-50%)">
+      style="width:600px;height:600px;--c:var(--pink);opacity:0.15;top:0;left:50%;transform:translateX(-50%)">
     </div>
     <div class="container" style="position:relative;z-index:2">
       <div class="final-cta-card">
@@ -592,19 +591,17 @@
         <div class="reveal"
           style="display:flex;flex-direction:column;align-items:center;gap:16px;transition-delay:200ms">
           <a href="https://www.tiktok.com/t/ZSqUprxKh/"
-            data-apply-link target="_top" class="btn btn-cyan btn-lg">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle">
+            data-apply-link target="_top" class="btn btn-main btn-lg">
+            <svg class="tt-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z" />
             </svg>
-            <span data-i18n="apply_btn">Ariza topshirish</span>
+            <span data-i18n="apply_btn">Ariza topshirish</span><svg class="ico btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path pathLength="1" d="M5 12h14"/><path pathLength="1" d="m12 5 7 7-7 7"/></svg>
           </a>
-          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center">
-            <span style="color:var(--ink-3);font-size:14px" data-i18n="questions_label">Savollar bormi?</span>
-            <a href="https://wa.me/message/WUIBSOCSSUKEG1" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost"
-              style="padding:10px 18px;font-size:14px">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
-                style="vertical-align:middle;margin-right:4px">
+          <div class="ask-row ask-row-center">
+            <span class="ask-label" data-i18n="questions_label">Savollar bormi?</span>
+            <a href="https://wa.me/message/WUIBSOCSSUKEG1" data-wa-link target="_blank" rel="noreferrer" class="btn btn-wa">
+              <svg class="wa-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
               </svg>WhatsApp
@@ -633,12 +630,12 @@
   <!-- ═══════ STICKY CTA (mobile) ═══════ -->
   <div class="sticky-cta">
     <a href="https://www.tiktok.com/t/ZSqUprxKh/"
-      data-apply-link target="_top" class="btn btn-cyan" style="flex:2"><svg width="16" height="16" viewBox="0 0 24 24"
-        fill="currentColor" style="vertical-align:middle;margin-right:4px">
+      data-apply-link target="_top" class="btn btn-main btn-main-sm" style="flex:2"><svg class="tt-icon" width="16" height="16" viewBox="0 0 24 24"
+        fill="currentColor" aria-hidden="true">
         <path
           d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.67a8.18 8.18 0 004.78 1.52V6.74a4.85 4.85 0 01-1.01-.05z" />
       </svg><span data-i18n="apply_btn">Ariza topshirish</span></a>
-    <a href="https://wa.me/message/WUIBSOCSSUKEG1" data-wa-link target="_blank" rel="noreferrer" class="btn btn-ghost"><svg width="16" height="16"
+    <a href="https://wa.me/message/WUIBSOCSSUKEG1" data-wa-link target="_blank" rel="noreferrer" class="btn btn-wa"><svg width="16" height="16"
         viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle">
         <path
           d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.019-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -646,7 +643,7 @@
   </div>
 
   <script>window.KM_LANG = "uz"; window.KM_IS_ROOT = false;</script>
-  <script src="../app.js?v=58678ad2" defer></script>
+  <script src="../app.js?v=d68fe66c" defer></script>
 
 </body>
 

@@ -85,14 +85,37 @@ function escText(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
+// ─── Иконки ───
+// Линейные SVG в стиле Lucide (лицензия ISC) вместо эмодзи: эмодзи на каждой
+// платформе рисуются по-своему и выглядят несерьёзно. pathLength="1" нужен
+// для анимации «прорисовки» контура при появлении блока (см. styles.css).
+const ICONS = {
+  gift: '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/>',
+  shield: '<path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>',
+  users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  trophy: '<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>',
+  chat: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/>',
+  rocket: '<path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>',
+  gem: '<path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/>',
+  crown: '<path d="M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z"/><path d="M5 21h14"/>',
+  quote: '<path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"/>',
+  arrow: '<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>',
+};
+
+function icon(name, cls) {
+  const body = ICONS[name].replace(/<(path|rect|circle)/g, '<$1 pathLength="1"');
+  return `<svg class="ico${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" fill="none" stroke="currentColor" ` +
+    `stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
+}
+
 // ─── Блоки контента (структура повторяет app.js — она источник разметки) ───
 const PERKS = [
-  { icon: '🎁', tKey: 'perk1_t', dKey: 'perk1_d', accent: 'var(--pink)',   span: 1 },
-  { icon: '0%', tKey: 'perk5_t', dKey: 'perk5_d', accent: 'var(--cyan)',   span: 2, big: true },
-  { icon: '🛡', tKey: 'perk3_t', dKey: 'perk3_d', accent: 'var(--orange)', span: 1 },
-  { icon: '👥', tKey: 'perk2_t', dKey: 'perk2_d', accent: 'var(--pink)',   span: 1 },
-  { icon: '🏆', tKey: 'perk4_t', dKey: 'perk4_d', accent: 'var(--yellow)', span: 1 },
-  { icon: '💬', tKey: 'perk6_t', dKey: 'perk6_d', accent: 'var(--cyan)',   span: 1 },
+  { icon: 'gift',   tKey: 'perk1_t', dKey: 'perk1_d', accent: 'var(--pink)',   span: 1 },
+  { icon: '0%',     tKey: 'perk5_t', dKey: 'perk5_d', accent: 'var(--cyan)',   span: 2, big: true },
+  { icon: 'shield', tKey: 'perk3_t', dKey: 'perk3_d', accent: 'var(--orange)', span: 1 },
+  { icon: 'users',  tKey: 'perk2_t', dKey: 'perk2_d', accent: 'var(--pink)',   span: 1 },
+  { icon: 'trophy', tKey: 'perk4_t', dKey: 'perk4_d', accent: 'var(--yellow)', span: 1 },
+  { icon: 'chat',   tKey: 'perk6_t', dKey: 'perk6_d', accent: 'var(--cyan)',   span: 1 },
 ];
 const HOW = [
   { tKey: 'how1_t', dKey: 'how1_d', c: 'var(--cyan)' },
@@ -101,9 +124,9 @@ const HOW = [
   { tKey: 'how4_t', dKey: 'how4_d', c: 'var(--yellow)' },
 ];
 const TIERS = [
-  { labelKey: 'prizes_tier2', glyph: '🚀', accent: 'var(--pink)' },
-  { labelKey: 'prizes_tier3', glyph: '💎', accent: 'var(--orange)' },
-  { labelKey: 'prizes_tier4', glyph: '👑', accent: 'var(--yellow)' },
+  { labelKey: 'prizes_tier2', icon: 'rocket', accent: 'var(--pink)' },
+  { labelKey: 'prizes_tier3', icon: 'gem', accent: 'var(--orange)' },
+  { labelKey: 'prizes_tier4', icon: 'crown', accent: 'var(--yellow)' },
 ];
 const QUOTES = [
   { qKey: 'proof_q1', name: '@maria_live', role: '124k', accent: 'var(--cyan)' },
@@ -128,46 +151,49 @@ const FAQ = [
 ];
 
 // ─── Рендер секций ───
+// Цвет акцента передаётся CSS-переменной --accent, а оттенки и свечение
+// считает styles.css. Раньше к var(--cyan) дописывали альфу как к hex
+// («var(--cyan)80»), такой CSS невалиден, и браузер молча выкидывал всё
+// свойство целиком — пропадали аватарки, подсветка призов и свечение цифр.
 function renderPerks(t) {
   return PERKS.map((p, i) =>
-    `<div class="card perk-card reveal${p.span === 2 ? ' span-2' : ''}" style="transition-delay:${i * 80}ms">` +
-    `<div class="perk-accent-line" style="background:${p.accent}"></div>` +
-    `<div class="perk-icon${p.big ? ' big' : ''}" style="color:${p.accent};text-shadow:0 0 30px ${p.accent}80">${p.icon}</div>` +
-    `<h3 class="t-h3" style="margin:0 0 10px">${escText(t(p.tKey))}</h3>` +
-    `<p class="t-body" style="margin:0;font-size:14px">${escText(t(p.dKey))}</p>` +
+    `<div class="card perk-card reveal${p.span === 2 ? ' span-2' : ''}" style="--accent:${p.accent};transition-delay:${i * 80}ms">` +
+    `<div class="perk-accent-line"></div>` +
+    `<div class="perk-icon${p.big ? ' big' : ''}">${p.big ? p.icon : icon(p.icon)}</div>` +
+    `<h3 class="t-h3 perk-title">${escText(t(p.tKey))}</h3>` +
+    `<p class="t-body perk-text">${escText(t(p.dKey))}</p>` +
     `</div>`
   ).join('\n');
 }
 
 function renderHow(t) {
   return HOW.map((s, i) =>
-    `<div class="card how-step reveal" style="transition-delay:${i * 100}ms">` +
-    `<div class="how-number" style="border:1px solid ${s.c};color:${s.c};box-shadow:0 0 24px ${s.c}40">0${i + 1}</div>` +
-    `<div class="how-spacer"></div>` +
-    `<h3 class="t-h3" style="margin:0 0 10px">${escText(t(s.tKey))}</h3>` +
-    `<p class="t-body" style="margin:0;font-size:14px">${escText(t(s.dKey))}</p>` +
+    `<div class="card how-step reveal" style="--accent:${s.c};transition-delay:${i * 100}ms">` +
+    `<div class="how-number">0${i + 1}</div>` +
+    `<h3 class="t-h3 how-title">${escText(t(s.tKey))}</h3>` +
+    `<p class="t-body how-text">${escText(t(s.dKey))}</p>` +
     `</div>`
   ).join('\n');
 }
 
 function renderPrizes(t) {
   return TIERS.map((tier, i) =>
-    `<div class="card prize-card reveal" style="transition-delay:${i * 80}ms;background:linear-gradient(180deg, ${tier.accent}10, transparent 60%)">` +
-    `<div class="prize-glyph" style="filter:drop-shadow(0 0 24px ${tier.accent})">${tier.glyph}</div>` +
-    `<div class="t-mono" style="color:${tier.accent};margin-bottom:8px">TIER ${i + 1}</div>` +
-    `<h3 class="t-h3" style="margin:0 0 12px">${escText(t(tier.labelKey))}</h3>` +
-    `<div class="prize-tier">🎁 ${escText(t('prizes_label'))}</div>` +
+    `<div class="card prize-card reveal" style="--accent:${tier.accent};transition-delay:${i * 80}ms">` +
+    `<div class="prize-glyph">${icon(tier.icon)}</div>` +
+    `<div class="t-mono prize-level">TIER ${i + 1}</div>` +
+    `<h3 class="t-h3 prize-title">${escText(t(tier.labelKey))}</h3>` +
+    `<div class="prize-tier">${icon('gift', 'ico-sm')} ${escText(t('prizes_label'))}</div>` +
     `</div>`
   ).join('\n');
 }
 
 function renderQuotes(t) {
   return QUOTES.map((q, i) =>
-    `<div class="card reveal" style="transition-delay:${i * 100}ms">` +
-    `<div class="quote-mark" style="color:${q.accent}">"</div>` +
+    `<div class="card quote-card reveal" style="--accent:${q.accent};transition-delay:${i * 100}ms">` +
+    `<div class="quote-mark">${icon('quote')}</div>` +
     `<p class="quote-text">${escText(t(q.qKey))}</p>` +
     `<div class="quote-author">` +
-    `<div class="quote-avatar" style="background:linear-gradient(135deg,${q.accent},${q.accent}80)"></div>` +
+    `<div class="quote-avatar"></div>` +
     `<div><div class="quote-name">${q.name}</div>` +
     `<div class="quote-role">${q.role} followers</div></div></div>` +
     `</div>`
@@ -176,14 +202,16 @@ function renderQuotes(t) {
 
 function renderFAQ(t) {
   // Первый пункт открыт — так же, как это делает app.js при загрузке.
+  // Ответ обёрнут в faq-answer-inner: раскрытие анимируется через
+  // grid-template-rows, поэтому длинный ответ не обрезается по max-height.
   return FAQ.map((pair, i) =>
-    `<button class="faq-item reveal${i === 0 ? ' open' : ''}" style="transition-delay:${i * 60}ms">` +
+    `<button class="faq-item reveal${i === 0 ? ' open' : ''}" aria-expanded="${i === 0}" style="transition-delay:${i * 60}ms">` +
     `<span class="faq-num">${String(i + 1).padStart(2, '0')}</span>` +
     `<span class="faq-content">` +
     `<span class="faq-question">${escText(t(pair[0]))}</span>` +
-    `<span class="faq-answer">${escText(t(pair[1]))}</span>` +
+    `<span class="faq-answer"><span class="faq-answer-inner">${escText(t(pair[1]))}</span></span>` +
     `</span>` +
-    `<span class="faq-toggle">+</span>` +
+    `<span class="faq-toggle" aria-hidden="true">+</span>` +
     `</button>`
   ).join('\n');
 }
@@ -196,8 +224,7 @@ function renderTicker(t) {
   ];
   const repeated = items.concat(items, items, items);
   return repeated.map((item) =>
-    `<span style="font-family:Unbounded;font-size:18px;font-weight:600;letter-spacing:-0.01em;` +
-    `color:${item === '·' ? 'var(--cyan)' : 'var(--ink-2)'}">${escText(item)}</span>`
+    `<span class="ticker-item${item === '·' ? ' ticker-dot' : ''}">${escText(item)}</span>`
   ).join('');
 }
 
@@ -372,6 +399,7 @@ function buildPage(loc, template) {
     '{{LANG_CODE}}': KM_LANGS.find((l) => l.code === loc.code).label,
     '{{LANG_CODE_INTERNAL}}': loc.code,
     '{{IS_ROOT}}': String(isRoot),
+    '{{ARROW}}': icon('arrow', 'btn-arrow'),
     '{{PHONE_LABEL}}': escText(t('perk1_t').toUpperCase()),
     '{{STAT_STREAMERS}}': escText(t('proof_streamers').split(' ').slice(1).join(' ')),
     '{{STAT_YEARS}}': escText(t('proof_years').split(' ').slice(1).join(' ')),
@@ -534,6 +562,7 @@ function buildArticle(a, template) {
     '{{APPLY_URL}}': esc(APPLY_URL),
     '{{WA_URL}}': esc(WA_URL),
     '{{LANG_CODE_INTERNAL}}': a.lang,
+    '{{ARROW}}': icon('arrow', 'btn-arrow'),
   };
   for (const [token, value] of Object.entries(scalars)) html = html.split(token).join(value);
 
