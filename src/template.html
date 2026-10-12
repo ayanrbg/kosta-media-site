@@ -109,12 +109,9 @@
 
     <div class="container hero-grid">
       <div class="hero-left">
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          <span class="t-mono hero-badge-text" data-i18n="badge_official">{{t:badge_official}}</span>
-        </div>
-
-        <h1 class="t-display hero-title" id="hero-title">{{HERO_TITLE}}</h1>
+        <!-- Плашка с названием агентства лежит внутри h1: так в главном заголовке
+             есть «Kosta Media» и «агентство», а внешне всё как раньше. -->
+        <h1 class="hero-h1"><span class="hero-badge"><span class="hero-badge-dot"></span><span class="t-mono hero-badge-text"><b class="hero-badge-brand">Kosta Media</b> · {{t:badge_official}}</span></span> <span class="t-display hero-title" id="hero-title">{{HERO_TITLE}}</span></h1>
 
         <p class="t-body-lg hero-sub" data-i18n="hero_sub">{{t:hero_sub}}</p>
 
@@ -318,7 +315,8 @@
         <span>Kosta Media</span>
       </div>
       <div class="footer-rights">
-        <span data-i18n="footer_rights">{{t:footer_rights}}</span> · kosta.media
+        <span data-i18n="footer_rights">{{t:footer_rights}}</span> · kosta.media ·
+        <a href="{{TIKTOK_URL}}" target="_blank" rel="me noopener">TikTok @kosta_agency</a>
       </div>
       <nav class="footer-langs" aria-label="{{t:lang_label}}">{{FOOTER_LANGS}}</nav>
     </div>

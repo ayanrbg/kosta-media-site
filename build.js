@@ -31,6 +31,10 @@ const KM_LANGS = global.window.KM_LANGS;
 const SITE = 'https://kosta.media';
 const APPLY_URL = 'https://www.tiktok.com/t/ZSqUprxKh/';
 const WA_URL = 'https://wa.me/message/WUIBSOCSSUKEG1';
+// Профили агентства в соцсетях. Идут в sameAs и ссылкой в подвал: по ним
+// поисковик связывает сайт с брендом «Kosta Media» в одну сущность.
+const TIKTOK_URL = 'https://www.tiktok.com/@kosta_agency';
+const SOCIAL_URLS = [TIKTOK_URL];
 const OG_IMAGE = SITE + '/assets/og-cover.png';
 
 // Внутренний код языка -> директория, ISO-коды для hreflang/OG.
@@ -300,7 +304,7 @@ function renderJsonLd(loc, t) {
       ],
       knowsLanguage: LOCALES.map((l) => l.hreflang),
       areaServed: COUNTRIES.map((c) => ({ '@type': 'Country', name: c.name, identifier: c.iso })),
-      sameAs: [WA_URL],
+      sameAs: SOCIAL_URLS.concat(WA_URL),
       contactPoint: [{
         '@type': 'ContactPoint',
         contactType: 'customer support',
@@ -396,6 +400,7 @@ function buildPage(loc, template) {
     '{{VER_JS}}': assetVersion('app.js'),
     '{{APPLY_URL}}': esc(APPLY_URL),
     '{{WA_URL}}': esc(WA_URL),
+    '{{TIKTOK_URL}}': esc(TIKTOK_URL),
     '{{LANG_CODE}}': KM_LANGS.find((l) => l.code === loc.code).label,
     '{{LANG_CODE_INTERNAL}}': loc.code,
     '{{IS_ROOT}}': String(isRoot),
@@ -561,6 +566,7 @@ function buildArticle(a, template) {
     '{{VER_JS}}': assetVersion('app.js'),
     '{{APPLY_URL}}': esc(APPLY_URL),
     '{{WA_URL}}': esc(WA_URL),
+    '{{TIKTOK_URL}}': esc(TIKTOK_URL),
     '{{LANG_CODE_INTERNAL}}': a.lang,
     '{{ARROW}}': icon('arrow', 'btn-arrow'),
   };
@@ -701,6 +707,7 @@ ${guides}
 
 - Сайт: ${SITE}/
 - WhatsApp: ${WA_URL}
+- TikTok агентства: ${TIKTOK_URL}
 - Заявка через TikTok: ${APPLY_URL}
 
 ## Языковые версии
@@ -805,6 +812,7 @@ function buildLlmsFull() {
   out.push('## Контакты\n');
   out.push('- Сайт: ' + SITE + '/');
   out.push('- WhatsApp: ' + WA_URL);
+  out.push('- TikTok агентства: ' + TIKTOK_URL);
   out.push('- Заявка через TikTok: ' + APPLY_URL);
 
   return out.join('\n') + '\n';
